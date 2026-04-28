@@ -1,0 +1,26 @@
+RQ1 — Text vs Structural signal confusion matrix
+
+--- STRICT (text_strict × struct_30pct) ---
+n: 24014
+both:              80  (0.3331%)
+only text:         68  (0.2832%)
+only struct:    15239  (63.4588%)
+neither:         8627  (35.9249%)
+text rate:    0.6163%
+struct rate:  63.7920%
+Cohen's κ:    -0.0019
+Jaccard:      0.0052
+Agreement:    0.3626
+
+--- COMPOSITE (text_composite × struct_any) ---
+n: 24014
+both:             996  (4.1476%)
+only text:        498  (2.0738%)
+only struct:    16858  (70.2007%)
+neither:         5662  (23.5779%)
+text rate:    6.2214%
+struct rate:  74.3483%
+Cohen's κ:    -0.0134
+Jaccard:      0.0543
+Agreement:    0.2773
+

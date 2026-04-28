@@ -1,0 +1,44 @@
+RQ2 robustness — Logistic on struct_fix_majority (strictest binary)
+n = 23871  events = 2202
+
+                  Generalized Linear Model Regression Results                  
+===============================================================================
+Dep. Variable:     struct_fix_majority   No. Observations:                23871
+Model:                             GLM   Df Residuals:                    23845
+Model Family:                 Binomial   Df Model:                           25
+Link Function:                   Logit   Scale:                          1.0000
+Method:                           IRLS   Log-Likelihood:                -7013.0
+Date:                 Mon, 13 Apr 2026   Deviance:                       14026.
+Time:                         16:18:47   Pearson chi2:                 2.37e+04
+No. Iterations:                     20   Pseudo R-squ. (CS):            0.02744
+Covariance Type:             nonrobust                                         
+============================================================================================
+                               coef    std err          z      P>|z|      [0.025      0.975]
+--------------------------------------------------------------------------------------------
+Intercept                   -4.0044      0.414     -9.681      0.000      -4.815      -3.194
+C(agent)[T.Copilot]          1.4353      0.333      4.308      0.000       0.782       2.088
+C(agent)[T.Cursor]           0.8152      0.344      2.367      0.018       0.140       1.490
+C(agent)[T.Devin]            1.0489      0.332      3.160      0.002       0.398       1.699
+C(agent)[T.OpenAI_Codex]     1.0012      0.328      3.054      0.002       0.359       1.644
+C(task_type)[T.chore]       -0.0074      0.246     -0.030      0.976      -0.490       0.475
+C(task_type)[T.ci]          -0.4822      0.322     -1.496      0.135      -1.114       0.149
+C(task_type)[T.docs]        -0.2594      0.201     -1.291      0.197      -0.653       0.134
+C(task_type)[T.feat]         0.2200      0.190      1.157      0.247      -0.153       0.593
+C(task_type)[T.fix]          1.0572      0.188      5.610      0.000       0.688       1.427
+C(task_type)[T.other]      -18.8319   1.69e+04     -0.001      0.999   -3.31e+04     3.3e+04
+C(task_type)[T.perf]         0.2655      0.335      0.793      0.428      -0.391       0.922
+C(task_type)[T.refactor]     0.1143      0.209      0.546      0.585      -0.296       0.525
+C(task_type)[T.revert]       0.8034      0.801      1.003      0.316      -0.767       2.374
+C(task_type)[T.style]        0.0897      0.377      0.238      0.812      -0.649       0.828
+C(task_type)[T.test]         0.4838      0.205      2.360      0.018       0.082       0.886
+C(lang_c)[T.Go]             -0.0323      0.124     -0.262      0.794      -0.275       0.210
+C(lang_c)[T.Java]            0.2699      0.158      1.707      0.088      -0.040       0.580
+C(lang_c)[T.Other]           0.4174      0.121      3.449      0.001       0.180       0.655
+C(lang_c)[T.Python]          0.3850      0.119      3.225      0.001       0.151       0.619
+C(lang_c)[T.Rust]           -0.0210      0.181     -0.116      0.908      -0.376       0.334
+C(lang_c)[T.TypeScript]      0.3515      0.122      2.879      0.004       0.112       0.591
+log_loc_added               -0.0489      0.014     -3.623      0.000      -0.075      -0.022
+log_stars                    0.0276      0.018      1.565      0.118      -0.007       0.062
+has_tests_in_pr              0.1360      0.058      2.363      0.018       0.023       0.249
+n_reviews                    0.0013      0.009      0.142      0.887      -0.017       0.019
+============================================================================================

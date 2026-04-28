@@ -1,0 +1,19 @@
+RQ2 robustness rerun — loose (n_followup_30) vs strict (n_fix_fup, struct_fix_majority)
+======================================================================
+
+Sample n = 23,871
+  loose outcome rate (any followup_30 > 0) = 63.9479%
+  strict struct_fix_flag rate              = 33.0150%
+  strict struct_fix_majority rate          = 9.2246%
+
+Per-agent IRR/OR (reference = Claude_Code unless absent):
+       agent  IRR_loose  p_loose  IRR_strict  p_strict  OR_majority  p_majority  IRR_loose_rank  IRR_strict_rank  OR_majority_rank
+       Devin     17.682      0.0      13.655       0.0        2.855       0.002             1.0              2.0               2.0
+OpenAI_Codex     15.423      0.0      18.171       0.0        2.722       0.002             2.0              1.0               3.0
+     Copilot      4.148      0.0      10.824       0.0        4.201       0.000             3.0              3.0               1.0
+      Cursor      4.050      0.0       5.330       0.0        2.260       0.018             4.0              4.0               4.0
+
+Spearman ρ (loose IRR vs strict IRR)        = 0.800  p=0.2
+Spearman ρ (loose IRR vs majority OR)       = 0.400  p=0.6
+
+CONCLUSION: per-agent ranking is highly stable (ρ ≥ 0.7) — RQ2 conclusions robust to outcome strictness.

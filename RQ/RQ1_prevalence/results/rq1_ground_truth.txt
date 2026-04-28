@@ -1,0 +1,24 @@
+RQ1 — Ground-truth validation of structural signal
+
+n = 24,014
+
+--- Signal rates ---
+text_flag_strict            : 0.6163%  (148)
+struct_flag (any fup≥30%)   : 63.7920%  (15,319)
+struct_fix_flag (fix fup)   : 32.9350%  (7,909)
+struct_fix_majority (≥50%)  : 9.2613%  (2,224)
+
+--- Cohen's κ with text_flag_strict ---
+vs struct_flag           κ = -0.0019
+vs struct_fix_flag       κ = -0.0002
+vs struct_fix_majority   κ = 0.0071
+
+--- Confusion: text_strict × struct_fix_flag ---
+  both      :      48  (0.1999%)
+  only_a    :     100  (0.4164%)
+  only_b    :    7861  (32.7351%)
+  neither   :   16005  (66.6486%)
+
+--- Interpretation ---
+struct_fix_flag retains 51.6% of the original struct_flag
+(i.e., 48.4% of 'only struct' PRs were 'normal iteration', not damage)

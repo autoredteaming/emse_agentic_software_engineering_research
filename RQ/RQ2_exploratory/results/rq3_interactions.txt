@@ -1,0 +1,567 @@
+=== text_flag_strict — M1 agent × task_type ===
+n=24014  AIC=1759.6  LL=-824.8
+                 Generalized Linear Model Regression Results                  
+==============================================================================
+Dep. Variable:       text_flag_strict   No. Observations:                24014
+Model:                            GLM   Df Residuals:                    23959
+Model Family:                Binomial   Df Model:                           54
+Link Function:                  Logit   Scale:                          1.0000
+Method:                          IRLS   Log-Likelihood:                -824.78
+Date:                Sun, 12 Apr 2026   Deviance:                       1649.6
+Time:                        18:07:33   Pearson chi2:                 2.14e+04
+No. Iterations:                    27   Pseudo R-squ. (CS):           0.006307
+Covariance Type:            nonrobust                                         
+=====================================================================================================================
+                                                        coef    std err          z      P>|z|      [0.025      0.975]
+---------------------------------------------------------------------------------------------------------------------
+Intercept                                           -28.9576   3.64e+05  -7.96e-05      1.000   -7.13e+05    7.13e+05
+C(agent)[T.Copilot]                                  24.4067   3.64e+05   6.71e-05      1.000   -7.13e+05    7.13e+05
+C(agent)[T.Cursor]                                   -0.1387   4.13e+05  -3.36e-07      1.000    -8.1e+05     8.1e+05
+C(agent)[T.Devin]                                    -0.0891   3.97e+05  -2.25e-07      1.000   -7.78e+05    7.78e+05
+C(agent)[T.OpenAI_Codex]                             -0.0040   3.67e+05  -1.08e-08      1.000    -7.2e+05     7.2e+05
+C(task_type)[T.chore]                                -0.0691   4.75e+05  -1.46e-07      1.000    -9.3e+05     9.3e+05
+C(task_type)[T.ci]                                    0.0698   6.05e+05   1.15e-07      1.000   -1.19e+06    1.19e+06
+C(task_type)[T.docs]                                  0.0106   4.14e+05   2.56e-08      1.000   -8.11e+05    8.11e+05
+C(task_type)[T.feat]                                 25.4248   3.64e+05   6.99e-05      1.000   -7.13e+05    7.13e+05
+C(task_type)[T.fix]                                  25.0510   3.64e+05   6.89e-05      1.000   -7.13e+05    7.13e+05
+C(task_type)[T.other]                                -0.0120   2.96e+05  -4.05e-08      1.000   -5.79e+05    5.79e+05
+C(task_type)[T.perf]                                  0.0780   7.75e+05   1.01e-07      1.000   -1.52e+06    1.52e+06
+C(task_type)[T.refactor]                              0.0151   4.52e+05   3.34e-08      1.000   -8.85e+05    8.85e+05
+C(task_type)[T.revert]                               -6.2423   2.13e+05  -2.93e-05      1.000   -4.18e+05    4.18e+05
+C(task_type)[T.style]                                -0.1451   1.18e+05  -1.23e-06      1.000   -2.31e+05    2.31e+05
+C(task_type)[T.test]                                 -0.0984   6.63e+05  -1.48e-07      1.000    -1.3e+06     1.3e+06
+C(agent)[T.Copilot]:C(task_type)[T.chore]             0.2156   4.75e+05   4.54e-07      1.000    -9.3e+05     9.3e+05
+C(agent)[T.Cursor]:C(task_type)[T.chore]             25.0278   5.14e+05   4.87e-05      1.000   -1.01e+06    1.01e+06
+C(agent)[T.Devin]:C(task_type)[T.chore]              24.8649   5.01e+05   4.97e-05      1.000   -9.81e+05    9.81e+05
+C(agent)[T.OpenAI_Codex]:C(task_type)[T.chore]       22.7354   4.78e+05   4.76e-05      1.000   -9.36e+05    9.36e+05
+C(agent)[T.Copilot]:C(task_type)[T.ci]              -24.6118   6.23e+05  -3.95e-05      1.000   -1.22e+06    1.22e+06
+C(agent)[T.Cursor]:C(task_type)[T.ci]                26.7313   6.36e+05    4.2e-05      1.000   -1.25e+06    1.25e+06
+C(agent)[T.Devin]:C(task_type)[T.ci]                 -0.0940   6.46e+05  -1.46e-07      1.000   -1.27e+06    1.27e+06
+C(agent)[T.OpenAI_Codex]:C(task_type)[T.ci]          -0.1156   6.11e+05  -1.89e-07      1.000    -1.2e+06     1.2e+06
+C(agent)[T.Copilot]:C(task_type)[T.docs]              0.2780   4.14e+05   6.72e-07      1.000   -8.11e+05    8.11e+05
+C(agent)[T.Cursor]:C(task_type)[T.docs]              25.0264   4.58e+05   5.47e-05      1.000   -8.97e+05    8.97e+05
+C(agent)[T.Devin]:C(task_type)[T.docs]               23.1318   4.43e+05   5.22e-05      1.000   -8.68e+05    8.68e+05
+C(agent)[T.OpenAI_Codex]:C(task_type)[T.docs]        22.7239   4.17e+05   5.45e-05      1.000   -8.17e+05    8.17e+05
+C(agent)[T.Copilot]:C(task_type)[T.feat]            -25.5733   3.64e+05  -7.03e-05      1.000   -7.13e+05    7.13e+05
+C(agent)[T.Cursor]:C(task_type)[T.feat]              -0.9740   4.13e+05  -2.36e-06      1.000    -8.1e+05     8.1e+05
+C(agent)[T.Devin]:C(task_type)[T.feat]               -1.5168   3.97e+05  -3.82e-06      1.000   -7.78e+05    7.78e+05
+C(agent)[T.OpenAI_Codex]:C(task_type)[T.feat]        -2.7932   3.67e+05   -7.6e-06      1.000    -7.2e+05     7.2e+05
+C(agent)[T.Copilot]:C(task_type)[T.fix]             -25.1647   3.64e+05  -6.92e-05      1.000   -7.13e+05    7.13e+05
+C(agent)[T.Cursor]:C(task_type)[T.fix]               -0.4992   4.13e+05  -1.21e-06      1.000    -8.1e+05     8.1e+05
+C(agent)[T.Devin]:C(task_type)[T.fix]                -0.6580   3.97e+05  -1.66e-06      1.000   -7.78e+05    7.78e+05
+C(agent)[T.OpenAI_Codex]:C(task_type)[T.fix]         -1.2605   3.67e+05  -3.43e-06      1.000    -7.2e+05     7.2e+05
+C(agent)[T.Copilot]:C(task_type)[T.other]          1.419e-12   1.18e-07    1.2e-05      1.000   -2.32e-07    2.32e-07
+C(agent)[T.Cursor]:C(task_type)[T.other]             -0.0120   2.96e+05  -4.05e-08      1.000   -5.79e+05    5.79e+05
+C(agent)[T.Devin]:C(task_type)[T.other]            7.152e-13   5.88e-08   1.22e-05      1.000   -1.15e-07    1.15e-07
+C(agent)[T.OpenAI_Codex]:C(task_type)[T.other]      4.15e-14   4.15e-09      1e-05      1.000   -8.13e-09    8.13e-09
+C(agent)[T.Copilot]:C(task_type)[T.perf]            -24.5680   8.23e+05  -2.98e-05      1.000   -1.61e+06    1.61e+06
+C(agent)[T.Cursor]:C(task_type)[T.perf]              26.3290   7.99e+05   3.29e-05      1.000   -1.57e+06    1.57e+06
+C(agent)[T.Devin]:C(task_type)[T.perf]               -0.1933   8.17e+05  -2.37e-07      1.000    -1.6e+06     1.6e+06
+C(agent)[T.OpenAI_Codex]:C(task_type)[T.perf]        24.3327   7.77e+05   3.13e-05      1.000   -1.52e+06    1.52e+06
+C(agent)[T.Copilot]:C(task_type)[T.refactor]         -0.9000   4.52e+05  -1.99e-06      1.000   -8.85e+05    8.85e+05
+C(agent)[T.Cursor]:C(task_type)[T.refactor]           0.0918   5.05e+05   1.82e-07      1.000    -9.9e+05     9.9e+05
+C(agent)[T.Devin]:C(task_type)[T.refactor]           24.4479   4.79e+05   5.11e-05      1.000   -9.38e+05    9.38e+05
+C(agent)[T.OpenAI_Codex]:C(task_type)[T.refactor]    22.9739   4.55e+05   5.05e-05      1.000   -8.91e+05    8.91e+05
+C(agent)[T.Copilot]:C(task_type)[T.revert]          -18.5409   4.02e+05  -4.61e-05      1.000   -7.88e+05    7.88e+05
+C(agent)[T.Cursor]:C(task_type)[T.revert]         -5.475e-14   4.16e-09  -1.31e-05      1.000   -8.16e-09    8.16e-09
+C(agent)[T.Devin]:C(task_type)[T.revert]              6.0496   4.18e+05   1.45e-05      1.000   -8.19e+05    8.19e+05
+C(agent)[T.OpenAI_Codex]:C(task_type)[T.revert]       6.2489   4.04e+05   1.55e-05      1.000   -7.92e+05    7.92e+05
+C(agent)[T.Copilot]:C(task_type)[T.style]           -24.3842   3.27e+05  -7.46e-05      1.000   -6.41e+05    6.41e+05
+C(agent)[T.Cursor]:C(task_type)[T.style]              0.0876   2.83e+05    3.1e-07      1.000   -5.54e+05    5.54e+05
+C(agent)[T.Devin]:C(task_type)[T.style]               0.0639   2.49e+05   2.56e-07      1.000   -4.88e+05    4.88e+05
+C(agent)[T.OpenAI_Codex]:C(task_type)[T.style]       24.0877   1.25e+05      0.000      1.000   -2.44e+05    2.45e+05
+C(agent)[T.Copilot]:C(task_type)[T.test]            -24.3218   6.74e+05  -3.61e-05      1.000   -1.32e+06    1.32e+06
+C(agent)[T.Cursor]:C(task_type)[T.test]               0.3045    7.2e+05   4.23e-07      1.000   -1.41e+06    1.41e+06
+C(agent)[T.Devin]:C(task_type)[T.test]                0.1940   6.93e+05    2.8e-07      1.000   -1.36e+06    1.36e+06
+C(agent)[T.OpenAI_Codex]:C(task_type)[T.test]         0.2015   6.65e+05   3.03e-07      1.000    -1.3e+06     1.3e+06
+log_loc_added                                        -0.0698      0.041     -1.696      0.090      -0.151       0.011
+log_stars                                             0.1029      0.052      1.968      0.049       0.000       0.205
+=====================================================================================================================
+
+=== text_flag_strict — M2 agent × has_tests_in_pr ===
+n=24014  AIC=1677.5  LL=-815.7
+                 Generalized Linear Model Regression Results                  
+==============================================================================
+Dep. Variable:       text_flag_strict   No. Observations:                24014
+Model:                            GLM   Df Residuals:                    23991
+Model Family:                Binomial   Df Model:                           22
+Link Function:                  Logit   Scale:                          1.0000
+Method:                          IRLS   Log-Likelihood:                -815.74
+Date:                Sun, 12 Apr 2026   Deviance:                       1631.5
+Time:                        18:07:34   Pearson chi2:                 2.16e+04
+No. Iterations:                    26   Pseudo R-squ. (CS):           0.007054
+Covariance Type:            nonrobust                                         
+============================================================================================================
+                                               coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------------------------------------
+Intercept                                   -5.8612      1.228     -4.773      0.000      -8.268      -3.454
+C(agent)[T.Copilot]                         -0.3306      0.629     -0.526      0.599      -1.563       0.902
+C(agent)[T.Cursor]                          -0.1896      0.646     -0.294      0.769      -1.455       1.076
+C(agent)[T.Devin]                           -0.7077      0.630     -1.123      0.261      -1.943       0.527
+C(agent)[T.OpenAI_Codex]                    -1.0481      0.605     -1.733      0.083      -2.233       0.137
+C(task_type)[T.chore]                        1.6925      1.074      1.577      0.115      -0.412       3.797
+C(task_type)[T.ci]                           1.0534      1.228      0.858      0.391      -1.354       3.461
+C(task_type)[T.docs]                         1.0122      1.028      0.985      0.325      -1.003       3.027
+C(task_type)[T.feat]                         1.2297      1.015      1.212      0.226      -0.759       3.218
+C(task_type)[T.fix]                          1.7745      1.011      1.756      0.079      -0.206       3.755
+C(task_type)[T.other]                      -22.1395   3.39e+05  -6.53e-05      1.000   -6.64e+05    6.64e+05
+C(task_type)[T.perf]                         2.3043      1.161      1.985      0.047       0.029       4.580
+C(task_type)[T.refactor]                     1.1762      1.057      1.113      0.266      -0.895       3.248
+C(task_type)[T.revert]                     -21.6872   1.66e+05     -0.000      1.000   -3.25e+05    3.25e+05
+C(task_type)[T.style]                        1.3356      1.420      0.941      0.347      -1.448       4.119
+C(task_type)[T.test]                       -19.3890   1.22e+04     -0.002      0.999    -2.4e+04    2.39e+04
+has_tests_in_pr                              0.2988      0.782      0.382      0.702      -1.234       1.831
+C(agent)[T.Copilot]:has_tests_in_pr         -0.8809      0.868     -1.014      0.310      -2.583       0.821
+C(agent)[T.Cursor]:has_tests_in_pr          -0.5329      0.964     -0.553      0.581      -2.423       1.357
+C(agent)[T.Devin]:has_tests_in_pr           -0.4608      0.883     -0.522      0.602      -2.192       1.270
+C(agent)[T.OpenAI_Codex]:has_tests_in_pr    -3.5210      1.058     -3.328      0.001      -5.595      -1.447
+log_loc_added                                0.0061      0.045      0.136      0.892      -0.082       0.094
+log_stars                                    0.0940      0.052      1.820      0.069      -0.007       0.195
+============================================================================================================
+
+=== text_flag_strict — M3 agent × reviews_bucket ===
+n=24014  AIC=1721.1  LL=-827.6
+                 Generalized Linear Model Regression Results                  
+==============================================================================
+Dep. Variable:       text_flag_strict   No. Observations:                24014
+Model:                            GLM   Df Residuals:                    23981
+Model Family:                Binomial   Df Model:                           32
+Link Function:                  Logit   Scale:                          1.0000
+Method:                          IRLS   Log-Likelihood:                -827.56
+Date:                Sun, 12 Apr 2026   Deviance:                       1655.1
+Time:                        18:07:34   Pearson chi2:                 2.09e+04
+No. Iterations:                    26   Pseudo R-squ. (CS):           0.006077
+Covariance Type:            nonrobust                                         
+=====================================================================================================================
+                                                        coef    std err          z      P>|z|      [0.025      0.975]
+---------------------------------------------------------------------------------------------------------------------
+Intercept                                            -5.2032      1.222     -4.257      0.000      -7.599      -2.808
+C(agent)[T.Copilot]                                  -0.1890      0.701     -0.270      0.787      -1.562       1.184
+C(agent)[T.Cursor]                                   -0.6290      0.718     -0.876      0.381      -2.037       0.779
+C(agent)[T.Devin]                                    -0.9946      0.681     -1.461      0.144      -2.329       0.339
+C(agent)[T.OpenAI_Codex]                             -1.8527      0.609     -3.043      0.002      -3.046      -0.660
+C(reviews_bucket)[T.1]                                0.5671      0.934      0.607      0.544      -1.264       2.398
+C(reviews_bucket)[T.2-3]                            -23.8904   9.18e+04     -0.000      1.000    -1.8e+05     1.8e+05
+C(reviews_bucket)[T.4+]                               0.8926      0.939      0.950      0.342      -0.948       2.734
+C(task_type)[T.chore]                                 1.4139      1.075      1.315      0.188      -0.693       3.521
+C(task_type)[T.ci]                                    0.9436      1.231      0.767      0.443      -1.469       3.356
+C(task_type)[T.docs]                                  0.9693      1.029      0.942      0.346      -1.048       2.987
+C(task_type)[T.feat]                                  0.9213      1.016      0.907      0.365      -1.070       2.913
+C(task_type)[T.fix]                                   1.4990      1.012      1.482      0.138      -0.484       3.482
+C(task_type)[T.other]                               -22.2182   3.39e+05  -6.56e-05      1.000   -6.64e+05    6.63e+05
+C(task_type)[T.perf]                                  2.1370      1.162      1.839      0.066      -0.140       4.414
+C(task_type)[T.refactor]                              0.9722      1.058      0.919      0.358      -1.102       3.046
+C(task_type)[T.revert]                              -22.1188   1.63e+05     -0.000      1.000   -3.19e+05    3.19e+05
+C(task_type)[T.style]                                 1.0776      1.424      0.757      0.449      -1.713       3.868
+C(task_type)[T.test]                                -20.9779   1.34e+04     -0.002      0.999   -2.64e+04    2.63e+04
+C(agent)[T.Copilot]:C(reviews_bucket)[T.1]           -0.1611      1.051     -0.153      0.878      -2.221       1.899
+C(agent)[T.Cursor]:C(reviews_bucket)[T.1]            -0.3666      1.115     -0.329      0.742      -2.553       1.819
+C(agent)[T.Devin]:C(reviews_bucket)[T.1]             -0.2641      1.043     -0.253      0.800      -2.308       1.780
+C(agent)[T.OpenAI_Codex]:C(reviews_bucket)[T.1]       0.0797      1.001      0.080      0.937      -1.883       2.042
+C(agent)[T.Copilot]:C(reviews_bucket)[T.2-3]         23.4012   9.18e+04      0.000      1.000    -1.8e+05     1.8e+05
+C(agent)[T.Cursor]:C(reviews_bucket)[T.2-3]          24.9661   9.18e+04      0.000      1.000    -1.8e+05     1.8e+05
+C(agent)[T.Devin]:C(reviews_bucket)[T.2-3]           23.9457   9.18e+04      0.000      1.000    -1.8e+05     1.8e+05
+C(agent)[T.OpenAI_Codex]:C(reviews_bucket)[T.2-3]    24.6815   9.18e+04      0.000      1.000    -1.8e+05     1.8e+05
+C(agent)[T.Copilot]:C(reviews_bucket)[T.4+]          -2.7399      1.165     -2.351      0.019      -5.024      -0.456
+C(agent)[T.Cursor]:C(reviews_bucket)[T.4+]          -24.0282   6.32e+04     -0.000      1.000   -1.24e+05    1.24e+05
+C(agent)[T.Devin]:C(reviews_bucket)[T.4+]            -0.7315      1.153     -0.635      0.526      -2.991       1.527
+C(agent)[T.OpenAI_Codex]:C(reviews_bucket)[T.4+]     -0.7262      1.380     -0.526      0.599      -3.432       1.979
+log_loc_added                                        -0.0581      0.042     -1.392      0.164      -0.140       0.024
+log_stars                                             0.0894      0.053      1.680      0.093      -0.015       0.194
+=====================================================================================================================
+
+=== text_flag_strict — M4 agent × lang_c ===
+n=24014  AIC=1631.4  LL=-772.7
+                 Generalized Linear Model Regression Results                  
+==============================================================================
+Dep. Variable:       text_flag_strict   No. Observations:                24014
+Model:                            GLM   Df Residuals:                    23971
+Model Family:                Binomial   Df Model:                           42
+Link Function:                  Logit   Scale:                          1.0000
+Method:                          IRLS   Log-Likelihood:                -772.69
+Date:                Sun, 12 Apr 2026   Deviance:                       1545.4
+Time:                        18:07:36   Pearson chi2:                 1.42e+04
+No. Iterations:                    28   Pseudo R-squ. (CS):            0.01061
+Covariance Type:            nonrobust                                         
+====================================================================================================================
+                                                       coef    std err          z      P>|z|      [0.025      0.975]
+--------------------------------------------------------------------------------------------------------------------
+Intercept                                          -30.6881    1.6e+06  -1.92e-05      1.000   -3.13e+06    3.13e+06
+C(agent)[T.Copilot]                                 25.7464    1.6e+06   1.61e-05      1.000   -3.13e+06    3.13e+06
+C(agent)[T.Cursor]                                   0.2326   1.77e+06   1.31e-07      1.000   -3.47e+06    3.47e+06
+C(agent)[T.Devin]                                   -0.1465   1.69e+06  -8.66e-08      1.000   -3.32e+06    3.32e+06
+C(agent)[T.OpenAI_Codex]                            24.7358    1.6e+06   1.55e-05      1.000   -3.13e+06    3.13e+06
+C(lang_c)[T.Go]                                     26.5016    1.6e+06   1.66e-05      1.000   -3.13e+06    3.13e+06
+C(lang_c)[T.Java]                                   -0.1016   1.78e+06   -5.7e-08      1.000   -3.49e+06    3.49e+06
+C(lang_c)[T.Other]                                  25.1564    1.6e+06   1.58e-05      1.000   -3.13e+06    3.13e+06
+C(lang_c)[T.Python]                                  0.0381   1.61e+06   2.37e-08      1.000   -3.16e+06    3.16e+06
+C(lang_c)[T.TypeScript]                             26.6967    1.6e+06   1.67e-05      1.000   -3.13e+06    3.13e+06
+C(task_type)[T.chore]                                1.5253      1.077      1.416      0.157      -0.585       3.636
+C(task_type)[T.ci]                                   1.0695      1.232      0.868      0.385      -1.344       3.483
+C(task_type)[T.docs]                                 1.0176      1.033      0.985      0.324      -1.006       3.041
+C(task_type)[T.feat]                                 1.0639      1.018      1.045      0.296      -0.931       3.059
+C(task_type)[T.fix]                                  1.3714      1.013      1.353      0.176      -0.615       3.358
+C(task_type)[T.other]                              -24.9965   9.14e+05  -2.73e-05      1.000   -1.79e+06    1.79e+06
+C(task_type)[T.perf]                                 2.1022      1.166      1.802      0.071      -0.184       4.388
+C(task_type)[T.refactor]                             0.8195      1.060      0.773      0.439      -1.258       2.897
+C(task_type)[T.revert]                             -24.0743   4.49e+05  -5.37e-05      1.000   -8.79e+05    8.79e+05
+C(task_type)[T.style]                                1.0065      1.425      0.706      0.480      -1.786       3.799
+C(task_type)[T.test]                               -22.5123   3.31e+04     -0.001      0.999    -6.5e+04    6.49e+04
+C(agent)[T.Copilot]:C(lang_c)[T.Go]                -27.1391    1.6e+06   -1.7e-05      1.000   -3.13e+06    3.13e+06
+C(agent)[T.Cursor]:C(lang_c)[T.Go]                 -26.6140   1.79e+06  -1.49e-05      1.000    -3.5e+06     3.5e+06
+C(agent)[T.Devin]:C(lang_c)[T.Go]                  -26.2401   1.71e+06  -1.53e-05      1.000   -3.36e+06    3.36e+06
+C(agent)[T.OpenAI_Codex]:C(lang_c)[T.Go]           -51.0226    1.6e+06   -3.2e-05      1.000   -3.13e+06    3.13e+06
+C(agent)[T.Copilot]:C(lang_c)[T.Java]              -25.5448   1.79e+06  -1.43e-05      1.000   -3.51e+06    3.51e+06
+C(agent)[T.Cursor]:C(lang_c)[T.Java]                -0.2238      2e+06  -1.12e-07      1.000   -3.92e+06    3.92e+06
+C(agent)[T.Devin]:C(lang_c)[T.Java]                  0.4446   2.46e+06   1.81e-07      1.000   -4.82e+06    4.82e+06
+C(agent)[T.OpenAI_Codex]:C(lang_c)[T.Java]          -0.3139   1.78e+06  -1.76e-07      1.000   -3.49e+06    3.49e+06
+C(agent)[T.Copilot]:C(lang_c)[T.Other]             -25.7314    1.6e+06  -1.61e-05      1.000   -3.13e+06    3.13e+06
+C(agent)[T.Cursor]:C(lang_c)[T.Other]               -1.5726   1.77e+06  -8.88e-07      1.000   -3.47e+06    3.47e+06
+C(agent)[T.Devin]:C(lang_c)[T.Other]                -0.1078   1.69e+06  -6.37e-08      1.000   -3.32e+06    3.32e+06
+C(agent)[T.OpenAI_Codex]:C(lang_c)[T.Other]        -24.4585    1.6e+06  -1.53e-05      1.000   -3.13e+06    3.13e+06
+C(agent)[T.Copilot]:C(lang_c)[T.Python]            -25.8143   1.61e+06   -1.6e-05      1.000   -3.16e+06    3.16e+06
+C(agent)[T.Cursor]:C(lang_c)[T.Python]              26.3194   1.78e+06   1.48e-05      1.000    -3.5e+06     3.5e+06
+C(agent)[T.Devin]:C(lang_c)[T.Python]               25.0433   1.71e+06   1.47e-05      1.000   -3.34e+06    3.34e+06
+C(agent)[T.OpenAI_Codex]:C(lang_c)[T.Python]        -1.3691   1.61e+06   -8.5e-07      1.000   -3.16e+06    3.16e+06
+C(agent)[T.Copilot]:C(lang_c)[T.TypeScript]        -26.9318    1.6e+06  -1.69e-05      1.000   -3.13e+06    3.13e+06
+C(agent)[T.Cursor]:C(lang_c)[T.TypeScript]          -1.2522   1.77e+06  -7.07e-07      1.000   -3.47e+06    3.47e+06
+C(agent)[T.Devin]:C(lang_c)[T.TypeScript]           -1.4180   1.69e+06  -8.38e-07      1.000   -3.32e+06    3.32e+06
+C(agent)[T.OpenAI_Codex]:C(lang_c)[T.TypeScript]   -27.2146    1.6e+06  -1.71e-05      1.000   -3.13e+06    3.13e+06
+log_loc_added                                       -0.0509      0.041     -1.250      0.211      -0.131       0.029
+log_stars                                            0.0301      0.052      0.575      0.566      -0.073       0.133
+====================================================================================================================
+
+=== text_flag_strict — M5 agent × stars_bucket ===
+n=24014  AIC=1692.8  LL=-813.4
+                 Generalized Linear Model Regression Results                  
+==============================================================================
+Dep. Variable:       text_flag_strict   No. Observations:                24014
+Model:                            GLM   Df Residuals:                    23981
+Model Family:                Binomial   Df Model:                           32
+Link Function:                  Logit   Scale:                          1.0000
+Method:                          IRLS   Log-Likelihood:                -813.38
+Date:                Sun, 12 Apr 2026   Deviance:                       1626.8
+Time:                        18:07:37   Pearson chi2:                 2.13e+04
+No. Iterations:                    26   Pseudo R-squ. (CS):           0.007249
+Covariance Type:            nonrobust                                         
+==================================================================================================================
+                                                     coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------------------------------------------
+Intercept                                         -4.9363      1.318     -3.744      0.000      -7.520      -2.352
+C(agent)[T.Copilot]                               -0.2469      0.795     -0.311      0.756      -1.805       1.311
+C(agent)[T.Cursor]                                -1.6987      1.235     -1.376      0.169      -4.119       0.721
+C(agent)[T.Devin]                                 -0.4408      0.880     -0.501      0.616      -2.165       1.283
+C(agent)[T.OpenAI_Codex]                          -1.5840      0.745     -2.125      0.034      -3.045      -0.123
+C(stars_bucket)[T.Q2]                              0.0900      1.248      0.072      0.943      -2.355       2.535
+C(stars_bucket)[T.Q3]                              0.0572      1.248      0.046      0.963      -2.388       2.502
+C(stars_bucket)[T.Q4]                             -0.3037      0.972     -0.312      0.755      -2.210       1.602
+C(task_type)[T.chore]                              1.6845      1.074      1.568      0.117      -0.421       3.790
+C(task_type)[T.ci]                                 1.0057      1.229      0.818      0.413      -1.404       3.415
+C(task_type)[T.docs]                               1.1795      1.028      1.147      0.251      -0.836       3.195
+C(task_type)[T.feat]                               1.2829      1.016      1.263      0.207      -0.708       3.274
+C(task_type)[T.fix]                                1.7313      1.011      1.712      0.087      -0.251       3.713
+C(task_type)[T.other]                            -21.9906    3.3e+05  -6.67e-05      1.000   -6.46e+05    6.46e+05
+C(task_type)[T.perf]                               2.4891      1.164      2.139      0.032       0.208       4.770
+C(task_type)[T.refactor]                           1.2381      1.058      1.170      0.242      -0.835       3.311
+C(task_type)[T.revert]                           -21.4271   1.61e+05     -0.000      1.000   -3.15e+05    3.15e+05
+C(task_type)[T.style]                              1.3179      1.422      0.927      0.354      -1.469       4.104
+C(task_type)[T.test]                             -20.5052   1.29e+04     -0.002      0.999   -2.53e+04    2.53e+04
+C(agent)[T.Copilot]:C(stars_bucket)[T.Q2]        -23.9438   7.73e+04     -0.000      1.000   -1.52e+05    1.52e+05
+C(agent)[T.Cursor]:C(stars_bucket)[T.Q2]           0.9738      1.892      0.515      0.607      -2.735       4.683
+C(agent)[T.Devin]:C(stars_bucket)[T.Q2]          -23.6403   4.01e+04     -0.001      1.000   -7.87e+04    7.86e+04
+C(agent)[T.OpenAI_Codex]:C(stars_bucket)[T.Q2]    -2.2286      1.337     -1.667      0.096      -4.849       0.392
+C(agent)[T.Copilot]:C(stars_bucket)[T.Q3]         -2.2485      1.633     -1.377      0.169      -5.449       0.952
+C(agent)[T.Cursor]:C(stars_bucket)[T.Q3]           0.2148      1.749      0.123      0.902      -3.213       3.643
+C(agent)[T.Devin]:C(stars_bucket)[T.Q3]           -0.2845      1.390     -0.205      0.838      -3.008       2.439
+C(agent)[T.OpenAI_Codex]:C(stars_bucket)[T.Q3]    -1.0495      1.384     -0.759      0.448      -3.762       1.662
+C(agent)[T.Copilot]:C(stars_bucket)[T.Q4]         -0.2705      1.012     -0.267      0.789      -2.255       1.714
+C(agent)[T.Cursor]:C(stars_bucket)[T.Q4]           1.8621      1.393      1.337      0.181      -0.869       4.593
+C(agent)[T.Devin]:C(stars_bucket)[T.Q4]           -0.4866      1.086     -0.448      0.654      -2.615       1.641
+C(agent)[T.OpenAI_Codex]:C(stars_bucket)[T.Q4]     0.5112      0.971      0.527      0.598      -1.391       2.414
+log_loc_added                                     -0.0429      0.041     -1.047      0.295      -0.123       0.037
+log_stars                                          0.0390      0.084      0.462      0.644      -0.127       0.205
+==================================================================================================================
+
+=== struct_flag — M1 agent × task_type ===
+n=24014  AIC=30111.6  LL=-15000.8
+                 Generalized Linear Model Regression Results                  
+==============================================================================
+Dep. Variable:            struct_flag   No. Observations:                24014
+Model:                            GLM   Df Residuals:                    23959
+Model Family:                Binomial   Df Model:                           54
+Link Function:                  Logit   Scale:                          1.0000
+Method:                          IRLS   Log-Likelihood:                -15001.
+Date:                Sun, 12 Apr 2026   Deviance:                       30002.
+Time:                        18:07:37   Pearson chi2:                 2.40e+04
+No. Iterations:                     5   Pseudo R-squ. (CS):            0.05812
+Covariance Type:            nonrobust                                         
+=====================================================================================================================
+                                                        coef    std err          z      P>|z|      [0.025      0.975]
+---------------------------------------------------------------------------------------------------------------------
+Intercept                                            -0.7552      1.087     -0.695      0.487      -2.885       1.375
+C(agent)[T.Copilot]                                   1.8090      1.115      1.623      0.105      -0.375       3.993
+C(agent)[T.Cursor]                                    1.2869      1.164      1.106      0.269      -0.994       3.568
+C(agent)[T.Devin]                                     2.7459      1.146      2.396      0.017       0.500       4.992
+C(agent)[T.OpenAI_Codex]                              2.7371      1.091      2.508      0.012       0.598       4.876
+C(task_type)[T.chore]                                 0.6327      1.345      0.471      0.638      -2.003       3.268
+C(task_type)[T.ci]                                    2.5918      1.584      1.637      0.102      -0.512       5.696
+C(task_type)[T.docs]                                 -0.1170      1.248     -0.094      0.925      -2.563       2.329
+C(task_type)[T.feat]                                  0.4605      1.104      0.417      0.677      -1.704       2.625
+C(task_type)[T.fix]                                   0.2118      1.133      0.187      0.852      -2.009       2.433
+C(task_type)[T.other]                                -0.1947      0.649     -0.300      0.764      -1.466       1.077
+C(task_type)[T.perf]                                  1.6710      1.782      0.938      0.348      -1.822       5.164
+C(task_type)[T.refactor]                              0.1072      1.330      0.081      0.936      -2.499       2.713
+C(task_type)[T.revert]                               -0.5038      0.496     -1.016      0.309      -1.475       0.468
+C(task_type)[T.style]                                 0.0698      0.266      0.263      0.793      -0.451       0.591
+C(task_type)[T.test]                                  2.5654      1.637      1.568      0.117      -0.642       5.773
+C(agent)[T.Copilot]:C(task_type)[T.chore]            -0.5603      1.396     -0.401      0.688      -3.297       2.177
+C(agent)[T.Cursor]:C(task_type)[T.chore]             -1.0430      1.458     -0.715      0.475      -3.902       1.816
+C(agent)[T.Devin]:C(task_type)[T.chore]              -0.7867      1.405     -0.560      0.576      -3.541       1.968
+C(agent)[T.OpenAI_Codex]:C(task_type)[T.chore]       -1.1074      1.355     -0.817      0.414      -3.763       1.549
+C(agent)[T.Copilot]:C(task_type)[T.ci]               -3.2481      1.637     -1.984      0.047      -6.457      -0.039
+C(agent)[T.Cursor]:C(task_type)[T.ci]                -2.8927      1.729     -1.673      0.094      -6.282       0.496
+C(agent)[T.Devin]:C(task_type)[T.ci]                 -2.9296      1.665     -1.759      0.079      -6.193       0.334
+C(agent)[T.OpenAI_Codex]:C(task_type)[T.ci]          -2.3031      1.598     -1.441      0.150      -5.435       0.829
+C(agent)[T.Copilot]:C(task_type)[T.docs]             -0.3762      1.281     -0.294      0.769      -2.887       2.134
+C(agent)[T.Cursor]:C(task_type)[T.docs]              -0.0010      1.329     -0.001      0.999      -2.606       2.604
+C(agent)[T.Devin]:C(task_type)[T.docs]               -0.1465      1.306     -0.112      0.911      -2.706       2.413
+C(agent)[T.OpenAI_Codex]:C(task_type)[T.docs]        -0.1288      1.255     -0.103      0.918      -2.589       2.331
+C(agent)[T.Copilot]:C(task_type)[T.feat]             -0.6555      1.137     -0.576      0.564      -2.885       1.574
+C(agent)[T.Cursor]:C(task_type)[T.feat]              -0.2065      1.188     -0.174      0.862      -2.534       2.121
+C(agent)[T.Devin]:C(task_type)[T.feat]               -0.7090      1.167     -0.608      0.544      -2.996       1.578
+C(agent)[T.OpenAI_Codex]:C(task_type)[T.feat]        -0.6615      1.112     -0.595      0.552      -2.840       1.517
+C(agent)[T.Copilot]:C(task_type)[T.fix]              -0.5803      1.165     -0.498      0.618      -2.864       1.703
+C(agent)[T.Cursor]:C(task_type)[T.fix]               -0.0690      1.216     -0.057      0.955      -2.453       2.315
+C(agent)[T.Devin]:C(task_type)[T.fix]                -0.6176      1.196     -0.516      0.606      -2.962       1.727
+C(agent)[T.OpenAI_Codex]:C(task_type)[T.fix]         -0.8863      1.141     -0.777      0.437      -3.122       1.350
+C(agent)[T.Copilot]:C(task_type)[T.other]          5.288e-15   2.39e-15      2.214      0.027    6.06e-16    9.97e-15
+C(agent)[T.Cursor]:C(task_type)[T.other]             -0.1947      0.649     -0.300      0.764      -1.466       1.077
+C(agent)[T.Devin]:C(task_type)[T.other]            1.903e-15   7.17e-16      2.653      0.008    4.97e-16    3.31e-15
+C(agent)[T.OpenAI_Codex]:C(task_type)[T.other]    -1.344e-15   1.58e-15     -0.851      0.395   -4.44e-15    1.75e-15
+C(agent)[T.Copilot]:C(task_type)[T.perf]             -0.8660      1.904     -0.455      0.649      -4.597       2.865
+C(agent)[T.Cursor]:C(task_type)[T.perf]              -2.6795      1.993     -1.345      0.179      -6.585       1.226
+C(agent)[T.Devin]:C(task_type)[T.perf]               -1.1697      1.891     -0.619      0.536      -4.876       2.537
+C(agent)[T.OpenAI_Codex]:C(task_type)[T.perf]        -1.4904      1.798     -0.829      0.407      -5.015       2.034
+C(agent)[T.Copilot]:C(task_type)[T.refactor]         -0.0691      1.365     -0.051      0.960      -2.745       2.607
+C(agent)[T.Cursor]:C(task_type)[T.refactor]           0.3258      1.416      0.230      0.818      -2.449       3.101
+C(agent)[T.Devin]:C(task_type)[T.refactor]            0.0784      1.388      0.056      0.955      -2.643       2.800
+C(agent)[T.OpenAI_Codex]:C(task_type)[T.refactor]    -0.4177      1.337     -0.312      0.755      -3.039       2.203
+C(agent)[T.Copilot]:C(task_type)[T.revert]           -0.5444      0.977     -0.557      0.577      -2.458       1.370
+C(agent)[T.Cursor]:C(task_type)[T.revert]          3.682e-16   7.88e-16      0.467      0.640   -1.18e-15    1.91e-15
+C(agent)[T.Devin]:C(task_type)[T.revert]              0.5630      0.996      0.566      0.572      -1.388       2.514
+C(agent)[T.OpenAI_Codex]:C(task_type)[T.revert]      -0.5224      0.870     -0.600      0.548      -2.228       1.183
+C(agent)[T.Copilot]:C(task_type)[T.style]             0.7023      0.750      0.936      0.349      -0.768       2.172
+C(agent)[T.Cursor]:C(task_type)[T.style]              0.9794      0.613      1.598      0.110      -0.222       2.181
+C(agent)[T.Devin]:C(task_type)[T.style]              -0.8035      0.548     -1.466      0.143      -1.878       0.271
+C(agent)[T.OpenAI_Codex]:C(task_type)[T.style]       -0.8084      0.321     -2.517      0.012      -1.438      -0.179
+C(agent)[T.Copilot]:C(task_type)[T.test]             -3.2748      1.680     -1.949      0.051      -6.568       0.018
+C(agent)[T.Cursor]:C(task_type)[T.test]              -3.5215      1.779     -1.980      0.048      -7.008      -0.035
+C(agent)[T.Devin]:C(task_type)[T.test]               -3.3589      1.699     -1.977      0.048      -6.689      -0.029
+C(agent)[T.OpenAI_Codex]:C(task_type)[T.test]        -2.9264      1.642     -1.782      0.075      -6.145       0.293
+log_loc_added                                        -0.0586      0.007     -7.861      0.000      -0.073      -0.044
+log_stars                                            -0.1118      0.011     -9.842      0.000      -0.134      -0.090
+=====================================================================================================================
+
+=== struct_flag — M2 agent × has_tests_in_pr ===
+n=24014  AIC=30074.1  LL=-15014.1
+                 Generalized Linear Model Regression Results                  
+==============================================================================
+Dep. Variable:            struct_flag   No. Observations:                24014
+Model:                            GLM   Df Residuals:                    23991
+Model Family:                Binomial   Df Model:                           22
+Link Function:                  Logit   Scale:                          1.0000
+Method:                          IRLS   Log-Likelihood:                -15014.
+Date:                Sun, 12 Apr 2026   Deviance:                       30028.
+Time:                        18:07:38   Pearson chi2:                 2.40e+04
+No. Iterations:                     5   Pseudo R-squ. (CS):            0.05708
+Covariance Type:            nonrobust                                         
+============================================================================================================
+                                               coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------------------------------------
+Intercept                                    0.3672      0.234      1.567      0.117      -0.092       0.827
+C(agent)[T.Copilot]                          0.7578      0.204      3.715      0.000       0.358       1.158
+C(agent)[T.Cursor]                           0.6723      0.209      3.215      0.001       0.262       1.082
+C(agent)[T.Devin]                            1.7330      0.201      8.602      0.000       1.338       2.128
+C(agent)[T.OpenAI_Codex]                     1.5907      0.196      8.100      0.000       1.206       1.976
+C(task_type)[T.chore]                       -0.3706      0.135     -2.750      0.006      -0.635      -0.106
+C(task_type)[T.ci]                           0.0325      0.164      0.199      0.842      -0.288       0.353
+C(task_type)[T.docs]                        -0.2416      0.110     -2.187      0.029      -0.458      -0.025
+C(task_type)[T.feat]                        -0.2253      0.107     -2.106      0.035      -0.435      -0.016
+C(task_type)[T.fix]                         -0.5993      0.108     -5.551      0.000      -0.811      -0.388
+C(task_type)[T.other]                       -0.8483      1.234     -0.687      0.492      -3.268       1.571
+C(task_type)[T.perf]                         0.1631      0.199      0.820      0.412      -0.227       0.553
+C(task_type)[T.refactor]                    -0.1978      0.117     -1.685      0.092      -0.428       0.032
+C(task_type)[T.revert]                      -0.7062      0.608     -1.162      0.245      -1.897       0.485
+C(task_type)[T.style]                       -0.5327      0.202     -2.640      0.008      -0.928      -0.137
+C(task_type)[T.test]                        -0.5067      0.118     -4.296      0.000      -0.738      -0.276
+has_tests_in_pr                             -0.6189      0.327     -1.895      0.058      -1.259       0.021
+C(agent)[T.Copilot]:has_tests_in_pr          0.9127      0.338      2.700      0.007       0.250       1.575
+C(agent)[T.Cursor]:has_tests_in_pr           0.8374      0.358      2.337      0.019       0.135       1.540
+C(agent)[T.Devin]:has_tests_in_pr            0.8457      0.338      2.499      0.012       0.183       1.509
+C(agent)[T.OpenAI_Codex]:has_tests_in_pr     0.8746      0.328      2.668      0.008       0.232       1.517
+log_loc_added                               -0.0819      0.008    -10.155      0.000      -0.098      -0.066
+log_stars                                   -0.1130      0.011     -9.946      0.000      -0.135      -0.091
+============================================================================================================
+
+=== struct_flag — M3 agent × reviews_bucket ===
+n=24014  AIC=29991.0  LL=-14962.5
+                 Generalized Linear Model Regression Results                  
+==============================================================================
+Dep. Variable:            struct_flag   No. Observations:                24014
+Model:                            GLM   Df Residuals:                    23981
+Model Family:                Binomial   Df Model:                           32
+Link Function:                  Logit   Scale:                          1.0000
+Method:                          IRLS   Log-Likelihood:                -14962.
+Date:                Sun, 12 Apr 2026   Deviance:                       29925.
+Time:                        18:07:38   Pearson chi2:                 2.40e+04
+No. Iterations:                     6   Pseudo R-squ. (CS):            0.06112
+Covariance Type:            nonrobust                                         
+=====================================================================================================================
+                                                        coef    std err          z      P>|z|      [0.025      0.975]
+---------------------------------------------------------------------------------------------------------------------
+Intercept                                             0.0730      0.229      0.318      0.751      -0.377       0.523
+C(agent)[T.Copilot]                                   0.7226      0.219      3.303      0.001       0.294       1.151
+C(agent)[T.Cursor]                                    0.5740      0.213      2.700      0.007       0.157       0.991
+C(agent)[T.Devin]                                     1.6655      0.202      8.262      0.000       1.270       2.061
+C(agent)[T.OpenAI_Codex]                              1.7041      0.190      8.953      0.000       1.331       2.077
+C(reviews_bucket)[T.1]                               -2.1144      0.748     -2.827      0.005      -3.580      -0.649
+C(reviews_bucket)[T.2-3]                             -1.1240      0.561     -2.002      0.045      -2.224      -0.024
+C(reviews_bucket)[T.4+]                              -0.2917      0.438     -0.666      0.506      -1.151       0.567
+C(task_type)[T.chore]                                -0.2756      0.135     -2.039      0.041      -0.541      -0.011
+C(task_type)[T.ci]                                    0.0454      0.164      0.276      0.782      -0.277       0.368
+C(task_type)[T.docs]                                 -0.2565      0.111     -2.316      0.021      -0.474      -0.039
+C(task_type)[T.feat]                                 -0.1792      0.107     -1.676      0.094      -0.389       0.030
+C(task_type)[T.fix]                                  -0.5231      0.108     -4.844      0.000      -0.735      -0.311
+C(task_type)[T.other]                                -0.7292      1.234     -0.591      0.555      -3.148       1.690
+C(task_type)[T.perf]                                  0.1812      0.199      0.911      0.362      -0.208       0.571
+C(task_type)[T.refactor]                             -0.1423      0.118     -1.210      0.226      -0.373       0.088
+C(task_type)[T.revert]                               -0.7084      0.607     -1.167      0.243      -1.898       0.481
+C(task_type)[T.style]                                -0.5182      0.202     -2.565      0.010      -0.914      -0.122
+C(task_type)[T.test]                                 -0.3816      0.116     -3.293      0.001      -0.609      -0.154
+C(agent)[T.Copilot]:C(reviews_bucket)[T.1]            2.0715      0.763      2.714      0.007       0.576       3.567
+C(agent)[T.Cursor]:C(reviews_bucket)[T.1]             2.2882      0.764      2.996      0.003       0.791       3.785
+C(agent)[T.Devin]:C(reviews_bucket)[T.1]              2.1185      0.755      2.806      0.005       0.639       3.598
+C(agent)[T.OpenAI_Codex]:C(reviews_bucket)[T.1]       1.6193      0.750      2.158      0.031       0.149       3.090
+C(agent)[T.Copilot]:C(reviews_bucket)[T.2-3]          1.2096      0.579      2.090      0.037       0.075       2.344
+C(agent)[T.Cursor]:C(reviews_bucket)[T.2-3]           1.2247      0.589      2.081      0.037       0.071       2.378
+C(agent)[T.Devin]:C(reviews_bucket)[T.2-3]            1.2365      0.572      2.160      0.031       0.114       2.359
+C(agent)[T.OpenAI_Codex]:C(reviews_bucket)[T.2-3]     0.2674      0.570      0.469      0.639      -0.849       1.384
+C(agent)[T.Copilot]:C(reviews_bucket)[T.4+]           0.3028      0.457      0.663      0.507      -0.593       1.198
+C(agent)[T.Cursor]:C(reviews_bucket)[T.4+]           -0.2719      0.515     -0.528      0.597      -1.281       0.737
+C(agent)[T.Devin]:C(reviews_bucket)[T.4+]             0.0519      0.458      0.113      0.910      -0.846       0.950
+C(agent)[T.OpenAI_Codex]:C(reviews_bucket)[T.4+]     -0.2665      0.459     -0.580      0.562      -1.167       0.634
+log_loc_added                                        -0.0521      0.008     -6.879      0.000      -0.067      -0.037
+log_stars                                            -0.0792      0.012     -6.724      0.000      -0.102      -0.056
+=====================================================================================================================
+
+=== struct_flag — M4 agent × lang_c ===
+n=24014  AIC=29325.5  LL=-14619.7
+                 Generalized Linear Model Regression Results                  
+==============================================================================
+Dep. Variable:            struct_flag   No. Observations:                24014
+Model:                            GLM   Df Residuals:                    23971
+Model Family:                Binomial   Df Model:                           42
+Link Function:                  Logit   Scale:                          1.0000
+Method:                          IRLS   Log-Likelihood:                -14620.
+Date:                Sun, 12 Apr 2026   Deviance:                       29239.
+Time:                        18:07:39   Pearson chi2:                 2.39e+04
+No. Iterations:                    20   Pseudo R-squ. (CS):            0.08754
+Covariance Type:            nonrobust                                         
+====================================================================================================================
+                                                       coef    std err          z      P>|z|      [0.025      0.975]
+--------------------------------------------------------------------------------------------------------------------
+Intercept                                          -20.7667   2.92e+04     -0.001      0.999   -5.73e+04    5.73e+04
+C(agent)[T.Copilot]                                 21.5103   2.92e+04      0.001      0.999   -5.73e+04    5.73e+04
+C(agent)[T.Cursor]                                   0.1248   3.27e+04   3.82e-06      1.000    -6.4e+04     6.4e+04
+C(agent)[T.Devin]                                   21.2384   2.92e+04      0.001      0.999   -5.73e+04    5.73e+04
+C(agent)[T.OpenAI_Codex]                            22.1899   2.92e+04      0.001      0.999   -5.73e+04    5.73e+04
+C(lang_c)[T.Go]                                     19.2443   2.92e+04      0.001      0.999   -5.73e+04    5.73e+04
+C(lang_c)[T.Java]                                   20.7756   2.92e+04      0.001      0.999   -5.73e+04    5.73e+04
+C(lang_c)[T.Other]                                  20.2450   2.92e+04      0.001      0.999   -5.73e+04    5.73e+04
+C(lang_c)[T.Python]                                 20.1647   2.92e+04      0.001      0.999   -5.73e+04    5.73e+04
+C(lang_c)[T.TypeScript]                             20.5187   2.92e+04      0.001      0.999   -5.73e+04    5.73e+04
+C(task_type)[T.chore]                               -0.0593      0.139     -0.426      0.670      -0.332       0.214
+C(task_type)[T.ci]                                   0.1104      0.171      0.647      0.518      -0.224       0.445
+C(task_type)[T.docs]                                -0.0690      0.115     -0.599      0.549      -0.295       0.157
+C(task_type)[T.feat]                                 0.0070      0.111      0.063      0.950      -0.211       0.225
+C(task_type)[T.fix]                                 -0.2664      0.112     -2.380      0.017      -0.486      -0.047
+C(task_type)[T.other]                               -0.7433      1.234     -0.602      0.547      -3.162       1.675
+C(task_type)[T.perf]                                 0.4448      0.202      2.199      0.028       0.048       0.841
+C(task_type)[T.refactor]                             0.0971      0.121      0.799      0.424      -0.141       0.335
+C(task_type)[T.revert]                              -0.2686      0.601     -0.447      0.655      -1.447       0.910
+C(task_type)[T.style]                               -0.3754      0.206     -1.825      0.068      -0.779       0.028
+C(task_type)[T.test]                                -0.1676      0.120     -1.396      0.163      -0.403       0.068
+C(agent)[T.Copilot]:C(lang_c)[T.Go]                -19.1197   2.92e+04     -0.001      0.999   -5.73e+04    5.73e+04
+C(agent)[T.Cursor]:C(lang_c)[T.Go]                   1.5661   3.27e+04   4.79e-05      1.000    -6.4e+04     6.4e+04
+C(agent)[T.Devin]:C(lang_c)[T.Go]                  -19.7418   2.92e+04     -0.001      0.999   -5.73e+04    5.73e+04
+C(agent)[T.OpenAI_Codex]:C(lang_c)[T.Go]           -19.0664   2.92e+04     -0.001      0.999   -5.73e+04    5.73e+04
+C(agent)[T.Copilot]:C(lang_c)[T.Java]              -20.8560   2.92e+04     -0.001      0.999   -5.73e+04    5.73e+04
+C(agent)[T.Cursor]:C(lang_c)[T.Java]                -1.3918   3.27e+04  -4.26e-05      1.000    -6.4e+04     6.4e+04
+C(agent)[T.Devin]:C(lang_c)[T.Java]                -41.9448   4.13e+04     -0.001      0.999   -8.11e+04     8.1e+04
+C(agent)[T.OpenAI_Codex]:C(lang_c)[T.Java]         -21.0123   2.92e+04     -0.001      0.999   -5.73e+04    5.73e+04
+C(agent)[T.Copilot]:C(lang_c)[T.Other]             -20.8438   2.92e+04     -0.001      0.999   -5.73e+04    5.73e+04
+C(agent)[T.Cursor]:C(lang_c)[T.Other]                0.5909   3.27e+04   1.81e-05      1.000    -6.4e+04     6.4e+04
+C(agent)[T.Devin]:C(lang_c)[T.Other]               -18.9128   2.92e+04     -0.001      0.999   -5.73e+04    5.73e+04
+C(agent)[T.OpenAI_Codex]:C(lang_c)[T.Other]        -20.6483   2.92e+04     -0.001      0.999   -5.73e+04    5.73e+04
+C(agent)[T.Copilot]:C(lang_c)[T.Python]            -19.6898   2.92e+04     -0.001      0.999   -5.73e+04    5.73e+04
+C(agent)[T.Cursor]:C(lang_c)[T.Python]               1.1404   3.27e+04   3.49e-05      1.000    -6.4e+04     6.4e+04
+C(agent)[T.Devin]:C(lang_c)[T.Python]              -19.6725   2.92e+04     -0.001      0.999   -5.73e+04    5.73e+04
+C(agent)[T.OpenAI_Codex]:C(lang_c)[T.Python]       -19.4195   2.92e+04     -0.001      0.999   -5.73e+04    5.73e+04
+C(agent)[T.Copilot]:C(lang_c)[T.TypeScript]        -20.5873   2.92e+04     -0.001      0.999   -5.73e+04    5.73e+04
+C(agent)[T.Cursor]:C(lang_c)[T.TypeScript]           0.8566   3.27e+04   2.62e-05      1.000    -6.4e+04     6.4e+04
+C(agent)[T.Devin]:C(lang_c)[T.TypeScript]          -19.2942   2.92e+04     -0.001      0.999   -5.73e+04    5.73e+04
+C(agent)[T.OpenAI_Codex]:C(lang_c)[T.TypeScript]   -21.2054   2.92e+04     -0.001      0.999   -5.73e+04    5.73e+04
+log_loc_added                                       -0.0464      0.008     -6.040      0.000      -0.061      -0.031
+log_stars                                           -0.0884      0.012     -7.484      0.000      -0.112      -0.065
+====================================================================================================================
+
+=== struct_flag — M5 agent × stars_bucket ===
+n=24014  AIC=29572.1  LL=-14753.1
+                 Generalized Linear Model Regression Results                  
+==============================================================================
+Dep. Variable:            struct_flag   No. Observations:                24014
+Model:                            GLM   Df Residuals:                    23981
+Model Family:                Binomial   Df Model:                           32
+Link Function:                  Logit   Scale:                          1.0000
+Method:                          IRLS   Log-Likelihood:                -14753.
+Date:                Sun, 12 Apr 2026   Deviance:                       29506.
+Time:                        18:07:39   Pearson chi2:                 2.39e+04
+No. Iterations:                     5   Pseudo R-squ. (CS):            0.07735
+Covariance Type:            nonrobust                                         
+==================================================================================================================
+                                                     coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------------------------------------------
+Intercept                                         -1.5122      0.319     -4.736      0.000      -2.138      -0.886
+C(agent)[T.Copilot]                                0.8898      0.300      2.963      0.003       0.301       1.479
+C(agent)[T.Cursor]                                 0.7685      0.318      2.417      0.016       0.145       1.392
+C(agent)[T.Devin]                                  1.2107      0.312      3.887      0.000       0.600       1.821
+C(agent)[T.OpenAI_Codex]                           2.3394      0.284      8.233      0.000       1.782       2.896
+C(stars_bucket)[T.Q2]                              0.1304      0.513      0.254      0.799      -0.875       1.136
+C(stars_bucket)[T.Q3]                             -1.1690      0.666     -1.754      0.079      -2.475       0.137
+C(stars_bucket)[T.Q4]                             -0.3540      0.363     -0.976      0.329      -1.065       0.357
+C(task_type)[T.chore]                             -0.2528      0.137     -1.846      0.065      -0.521       0.016
+C(task_type)[T.ci]                                 0.1276      0.168      0.760      0.447      -0.201       0.457
+C(task_type)[T.docs]                              -0.1686      0.113     -1.495      0.135      -0.390       0.052
+C(task_type)[T.feat]                              -0.1363      0.109     -1.247      0.212      -0.351       0.078
+C(task_type)[T.fix]                               -0.4321      0.110     -3.927      0.000      -0.648      -0.216
+C(task_type)[T.other]                             -0.8957      1.258     -0.712      0.476      -3.361       1.569
+C(task_type)[T.perf]                               0.2432      0.202      1.207      0.228      -0.152       0.638
+C(task_type)[T.refactor]                          -0.0656      0.120     -0.548      0.584      -0.300       0.169
+C(task_type)[T.revert]                            -0.6815      0.604     -1.129      0.259      -1.865       0.502
+C(task_type)[T.style]                             -0.5079      0.205     -2.481      0.013      -0.909      -0.107
+C(task_type)[T.test]                              -0.2856      0.118     -2.415      0.016      -0.517      -0.054
+C(agent)[T.Copilot]:C(stars_bucket)[T.Q2]         -0.1912      0.590     -0.324      0.746      -1.348       0.966
+C(agent)[T.Cursor]:C(stars_bucket)[T.Q2]          -0.2613      0.601     -0.435      0.663      -1.438       0.916
+C(agent)[T.Devin]:C(stars_bucket)[T.Q2]            0.7021      0.551      1.274      0.203      -0.378       1.782
+C(agent)[T.OpenAI_Codex]:C(stars_bucket)[T.Q2]    -0.4019      0.514     -0.782      0.434      -1.410       0.606
+C(agent)[T.Copilot]:C(stars_bucket)[T.Q3]          1.5565      0.682      2.282      0.022       0.220       2.893
+C(agent)[T.Cursor]:C(stars_bucket)[T.Q3]           1.7389      0.693      2.510      0.012       0.381       3.097
+C(agent)[T.Devin]:C(stars_bucket)[T.Q3]            2.1173      0.686      3.086      0.002       0.773       3.462
+C(agent)[T.OpenAI_Codex]:C(stars_bucket)[T.Q3]     0.4157      0.669      0.621      0.534      -0.896       1.727
+C(agent)[T.Copilot]:C(stars_bucket)[T.Q4]          0.0076      0.375      0.020      0.984      -0.728       0.743
+C(agent)[T.Cursor]:C(stars_bucket)[T.Q4]          -0.2240      0.398     -0.563      0.573      -1.004       0.556
+C(agent)[T.Devin]:C(stars_bucket)[T.Q4]            0.6477      0.384      1.688      0.091      -0.104       1.400
+C(agent)[T.OpenAI_Codex]:C(stars_bucket)[T.Q4]    -1.0692      0.360     -2.966      0.003      -1.776      -0.363
+log_loc_added                                     -0.0503      0.008     -6.581      0.000      -0.065      -0.035
+log_stars                                          0.1253      0.020      6.338      0.000       0.087       0.164
+==================================================================================================================

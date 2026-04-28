@@ -1,0 +1,18 @@
+RQ4 robustness — predicting struct_fix_majority directly (binary)
+
+n_train: 14060  n_test: 9954
+train pos rate: 0.1043
+test pos rate:  0.0762
+
+LightGBM AUC:              0.6394
+LightGBM AP:               0.1468
+LightGBM Brier:            0.0689
+LightGBM Precision@top20%: 0.1528
+LightGBM lift@top20%:      2.01x
+
+Baseline AUC:              0.5743
+Baseline AP:               0.0982
+Baseline Precision@top20%: 0.1151
+Baseline lift@top20%:      1.51x
+
+best iteration: 45

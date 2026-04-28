@@ -1,0 +1,53 @@
+RQ2 — Cox proportional hazards (file-level survival)
+n rows fit: 200,000  events: 96,518
+
+<lifelines.CoxPHFitter: fitted with 200000 total observations, 103482 right-censored observations>
+             duration col = 'time_days'
+                event col = 'event'
+                penalizer = 0.01
+                 l1 ratio = 0.0
+      baseline estimation = breslow
+   number of observations = 200000
+number of events observed = 96518
+   partial log-likelihood = -1129834.38
+         time fit was run = 2026-04-12 10:06:10 UTC
+                    model = RQ2 Cox PH (file-level survival)
+
+---
+                      coef exp(coef)  se(coef)  coef lower 95%  coef upper 95% exp(coef) lower 95% exp(coef) upper 95%
+covariate                                                                                                             
+log_loc_added        -0.08      0.93      0.00           -0.08           -0.07                0.92                0.93
+log_stars            -0.01      0.99      0.00           -0.02           -0.01                0.98                0.99
+has_tests_in_pr       0.30      1.35      0.01            0.28            0.32                1.33                1.38
+n_reviews            -0.02      0.98      0.00           -0.02           -0.02                0.98                0.98
+agent_c_Copilot       0.12      1.12      0.02            0.07            0.16                1.07                1.18
+agent_c_Cursor        0.07      1.07      0.03            0.01            0.12                1.01                1.13
+agent_c_Devin         0.80      2.23      0.02            0.76            0.85                2.13                2.33
+agent_c_OpenAI_Codex  0.80      2.22      0.02            0.75            0.84                2.12                2.31
+lang_c_Go            -0.42      0.66      0.02           -0.45           -0.39                0.64                0.68
+lang_c_JavaScript     0.04      1.04      0.02            0.01            0.08                1.01                1.08
+lang_c_Other         -0.56      0.57      0.02           -0.59           -0.53                0.56                0.59
+lang_c_Python        -0.46      0.63      0.02           -0.49           -0.42                0.61                0.65
+lang_c_TypeScript    -0.32      0.73      0.02           -0.35           -0.29                0.71                0.75
+
+                      cmp to      z      p  -log2(p)
+covariate                                           
+log_loc_added           0.00 -49.84 <0.005       inf
+log_stars               0.00  -4.65 <0.005     18.22
+has_tests_in_pr         0.00  32.80 <0.005    781.34
+n_reviews               0.00 -26.18 <0.005    499.29
+agent_c_Copilot         0.00   4.93 <0.005     20.22
+agent_c_Cursor          0.00   2.27   0.02      5.44
+agent_c_Devin           0.00  35.61 <0.005    920.27
+agent_c_OpenAI_Codex    0.00  35.80 <0.005    930.03
+lang_c_Go               0.00 -27.75 <0.005    560.55
+lang_c_JavaScript       0.00   2.38   0.02      5.84
+lang_c_Other            0.00 -36.09 <0.005    945.19
+lang_c_Python           0.00 -27.85 <0.005    564.49
+lang_c_TypeScript       0.00 -21.20 <0.005    329.03
+---
+Concordance = 0.63
+Partial AIC = 2259694.75
+log-likelihood ratio test = 17920.46 on 13 df
+-log2(p) of ll-ratio test = inf
+

@@ -1,0 +1,11 @@
+RQ4 robustness — strict outcome (struct_fix_majority) summary
+==============================================================
+
+Outcome: struct_fix_majority (≥50% of overlap follow-ups are fix-task)
+Sample n = 24,014  positives = 2224  (9.26%)
+
+Test-set metrics:
+  LightGBM   AUC=0.639  AP=0.147  P@20%=0.153  lift=2.01x
+  Baseline   AUC=0.574  AP=0.098  P@20%=0.115  lift=1.51x
+
+CONCLUSION: AUC 0.60–0.70 — predictability holds at attenuated strength; RQ4 robust with caveat.

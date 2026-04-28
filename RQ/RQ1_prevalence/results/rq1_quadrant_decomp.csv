@@ -1,0 +1,5 @@
+quadrant,n,has_fix_fup_rate,mean_fix_share,mean_total_fup
+both,80,0.6,0.3335,4.025
+neither,8627,0.0,0.0,0.0
+only_struct,15239,0.5158,0.183,15.8978
+only_text,68,0.0,0.0,0.0

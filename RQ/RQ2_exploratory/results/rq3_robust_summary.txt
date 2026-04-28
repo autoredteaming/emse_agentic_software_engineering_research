@@ -1,0 +1,41 @@
+RQ3 robustness — main-effects sign concordance across outcomes
+=================================================================
+
+Sample n = 24,014
+  struct_flag               events=15319  rate=63.7920%
+  struct_fix_flag           events=7909  rate=32.9350%
+  struct_fix_majority       events=2224  rate=9.2613%
+  text_flag_strict          events=148  rate=0.6163%
+
+Side-by-side OR (3 outcomes):
+                    term  OR_struct_flag  p_struct_flag  OR_struct_fix_flag  p_struct_fix_flag  OR_struct_fix_majority  p_struct_fix_majority
+     C(agent)[T.Copilot]           3.468          0.000               6.882              0.000                   4.267                  0.000
+      C(agent)[T.Cursor]           3.006          0.000               4.291              0.000                   2.303                  0.015
+       C(agent)[T.Devin]           8.892          0.000               8.104              0.000                   2.904                  0.001
+C(agent)[T.OpenAI_Codex]           6.187          0.000               8.974              0.000                   2.796                  0.002
+   C(task_type)[T.chore]           0.820          0.148               0.749              0.039                   0.996                  0.987
+      C(task_type)[T.ci]           1.063          0.714               1.251              0.153                   0.696                  0.242
+    C(task_type)[T.docs]           0.902          0.362               0.747              0.007                   0.769                  0.189
+    C(task_type)[T.feat]           0.946          0.613               0.944              0.586                   1.249                  0.243
+     C(task_type)[T.fix]           0.684          0.001               1.101              0.366                   2.906                  0.000
+   C(task_type)[T.other]           0.436          0.505               0.000              0.999                   0.000                  0.999
+    C(task_type)[T.perf]           1.461          0.059               1.176              0.389                   1.320                  0.407
+C(task_type)[T.refactor]           1.023          0.852               0.749              0.014                   1.135                  0.543
+  C(task_type)[T.revert]           0.608          0.423               1.112              0.871                   2.284                  0.303
+   C(task_type)[T.style]           0.681          0.060               0.397              0.000                   1.220                  0.585
+    C(task_type)[T.test]           0.732          0.009               0.755              0.017                   1.624                  0.018
+           log_loc_added           0.942          0.000               0.874              0.000                   0.952                  0.000
+               log_stars           0.897          0.000               0.878              0.000                   1.023                  0.187
+         has_tests_in_pr           1.175          0.000               1.003              0.938                   1.151                  0.015
+               n_reviews           0.974          0.000               0.985              0.065                   0.999                  0.909
+
+Sign concordance (loose struct_flag vs strict majority):
+  terms compared:   19
+  same sign:        12
+  sign flips:       7
+  concordance rate: 63.2%
+
+Spearman ρ agent coefs (loose vs strict)   = 0.800
+Spearman ρ agent coefs (loose vs majority) = 0.400
+
+CONCLUSION: <70% sign concordance — RQ3 main effects unstable; explicit caveat needed.

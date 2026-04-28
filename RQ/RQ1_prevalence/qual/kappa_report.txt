@@ -1,0 +1,18 @@
+Inter-rater reliability — qualitative damage coding
+=======================================================
+
+Subset n = 20 (5 packs per batch x 4 batches)
+Rater 1 (full sample coder) distribution: {'N1': 17, 'N2': 2, 'P5': 1}
+Rater 2 (independent strict coder) distribution: {'N1': 16, 'N2': 1, 'P5': 1, 'P1': 1, 'P6': 1}
+
+Multi-class Cohen's kappa (8 labels): 0.200
+Binary kappa (damage P* vs non-damage N*): 0.459
+Raw agreement (full): 15/20 = 75.0%
+Raw agreement (binary): 18/20 = 90.0%
+
+Disagreements (rater1 -> rater2):
+  src_pr=3134580076: r1=N1  r2=N2
+  src_pr=3181595432: r1=N2  r2=N1
+  src_pr=3188719711: r1=N2  r2=N1
+  src_pr=3223299299: r1=N1  r2=P1
+  src_pr=3225389334: r1=N1  r2=P6

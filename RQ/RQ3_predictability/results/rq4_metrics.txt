@@ -1,0 +1,18 @@
+RQ4 — Predictive damage model metrics
+
+n_train: 14060
+n_test:  9954
+threshold (damage_score 90th pct): 0.2854
+train pos rate: 0.0487
+test pos rate:  0.1725
+
+LightGBM AUC:              0.6194
+LightGBM AP:               0.2896
+LightGBM Brier:            0.1550
+LightGBM Precision@top20%: 0.3382
+
+Baseline AUC:              0.6378
+Baseline AP:               0.2290
+Baseline Precision@top20%: 0.2392
+
+best iteration: 3

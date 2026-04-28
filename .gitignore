@@ -1,0 +1,35 @@
+# ====================================================================
+# Beyond the Revert — reproduction package .gitignore
+# ====================================================================
+
+# --- External corpora (huge, available from upstream sources) ---
+# AIDev raw parquet dump (~925 MB, fetch from Hugging Face: AIDev)
+AIDev_datasets/
+# MSR 2026 Mining Challenge accompanying PDFs (~40 MB, external corpus)
+MSR2026/
+
+# --- Overleaf-managed paper (lives in its own git remote) ---
+latex/
+
+# --- Python build artefacts ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# --- macOS / IDE noise ---
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*~
+
+# --- Local environment ---
+.env
+.envrc
+venv/
+.venv/

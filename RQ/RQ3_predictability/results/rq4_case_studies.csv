@@ -1,0 +1,21 @@
+rank,pr_id,agent,task_type,language,repo,damage_score,text_flag_strict,n_post_merge_refs,n_followup_30,loc_added,loc_deleted,files_changed,has_tests_in_pr,n_reviews,merge_duration_hours,title,url
+1,3274969873,Claude_Code,fix,TypeScript,mendableai/firecrawl,10.371,0,3,0,6,0,1,0,1,0.18,fix(go): add mutex to prevent concurrent access issues in html-to-markdown,https://github.com/mendableai/firecrawl/pull/1883
+2,3237888968,Devin,docs,TypeScript,enzonotario/vitepress-openapi,7.106,1,4,0,508,345,4,0,0,94.59,docs: add component API documentation for OASpec and OAOperation,https://github.com/enzonotario/vitepress-openapi/pull/276
+3,3255139387,Copilot,fix,C#,dotnet/aspire,7.106,1,3,1,41,0,2,1,3,0.57,Fix GitHubModels health check dependency on IHttpClientFactory,https://github.com/dotnet/aspire/pull/10624
+4,3251622901,Cursor,fix,TypeScript,elizaOS/eliza,6.446,1,2,0,10,5,2,0,0,0.02,Prevent undefined model use restoration,https://github.com/elizaOS/eliza/pull/5660
+5,3249124049,Devin,chore,Ruby,antiwork/gumroad,6.416,1,2,1,1,1,1,0,1,0.05,Update S3 presigned URL expiry from 1 week to 1 year in GenerateSalesReportJob,https://github.com/antiwork/gumroad/pull/662
+6,3235168159,Copilot,refactor,C#,dotnet/aspire,6.377,1,3,0,225,277,13,1,2,13.23,Remove deprecated parameterless GetDashboardUrlsAsync method from AppHostRpcTarget,https://github.com/dotnet/aspire/pull/10453
+7,3223703470,Cursor,fix,Python,getsentry/sentry,6.172,1,3,1,3,0,1,0,2,0.43,fix(detectors): TypeError,https://github.com/getsentry/sentry/pull/95356
+8,3233066510,Cursor,feat,Python,getsentry/sentry,6.088,1,2,0,2,2,1,0,1,20.08,Make log text wrapping configurable with white-space prop,https://github.com/getsentry/sentry/pull/95572
+9,3266763733,Claude_Code,feat,TypeScript,OpenAgentsInc/openagents,6.055,0,6,0,4629,362,29,1,0,0.12,feat: Complete 4-phase authentication integration - Remove duplication & add production hardening,https://github.com/OpenAgentsInc/openagents/pull/1219
+10,3219092077,Cursor,ci,C++,acts-project/acts,5.978,1,2,0,2611,1510,63,1,2,55.64,ci: Add check for devcontainer configuration,https://github.com/acts-project/acts/pull/4414
+11,3244343726,Cursor,feat,Python,getsentry/sentry,5.929,1,1,2,114,63,4,1,3,0.47,Expose Sentry MCP configuration endpoint,https://github.com/getsentry/sentry/pull/95934
+12,3118287824,OpenAI_Codex,fix,Rust,EricLBuehler/mistral.rs,5.903,1,5,1,65,64,7,0,2,2.74,"Fix CUDA context switching, bind thread on CudaStorage drop",https://github.com/EricLBuehler/mistral.rs/pull/1428
+13,3144426063,Copilot,fix,C#,microsoft/PowerToys,5.827,1,3,0,10,4,2,0,3,117.68,Fix default browser detection for Windows 11 24H2 by checking UserChoiceLatest registry key,https://github.com/microsoft/PowerToys/pull/40035
+14,3225483992,Copilot,fix,Go,sysadminsmedia/homebox,5.765,1,1,0,142,10,2,1,1,2.15,Fix photo display issue when adding additional attachments to items,https://github.com/sysadminsmedia/homebox/pull/895
+15,3186220148,OpenAI_Codex,feat,HTML,hmislk/hmis,5.759,1,0,19,191,2,3,0,0,0.01,Add configurable transfer request receipt,https://github.com/hmislk/hmis/pull/13499
+16,3185775040,OpenAI_Codex,feat,HTML,hmislk/hmis,5.757,1,0,19,16,3,2,0,0,0.0,Add item detail button to transfer request,https://github.com/hmislk/hmis/pull/13490
+17,3274181978,OpenAI_Codex,docs,JavaScript,strapi/documentation,5.752,0,2,0,185,172,4,0,2,0.23,Improve GraphQL queries explanations (Flat vs. Relay-style),https://github.com/strapi/documentation/pull/2621
+18,3135538721,Cursor,feat,Python,getsentry/sentry,5.732,1,2,3,433,52,9,1,2,16.02,feat(open-pr-comments): Add C# support,https://github.com/getsentry/sentry/pull/93304
+19,3214724259,Claude_Code,feat,TypeScript,elizaOS/eliza,5.732,1,1,0,1013,340,6,1,1,0.0,feat: add comprehensive test coverage for forms plugin,https://github.com/elizaOS/eliza/pull/5489
+20,3175625118,OpenAI_Codex,fix,Dart,KomodoPlatform/komodo-wallet,5.73,1,1,7,61,29,2,0,0,0.01,fix(feedback): validate message not empty,https://github.com/KomodoPlatform/komodo-wallet/pull/2819
