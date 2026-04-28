@@ -1,6 +1,6 @@
 # Beyond the Revert: Latent Post-Merge Damage in AI Coding Agent PRs
 
-Reproduction package for the EMSE paper *Beyond the Revert: An Empirical
+Reproduction package for the paper *Beyond the Revert: An Empirical
 Study of Latent Post-Merge Damage in AI Coding Agent Pull Requests*.
 
 This repository contains the data-processing scripts, intermediate

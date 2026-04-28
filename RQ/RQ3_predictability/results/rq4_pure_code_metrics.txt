@@ -3,10 +3,11 @@ RQ4 — Feature set ablation (reviewer rebuttal on merge_duration leakage)
 train rows: 14060
 test rows:  9954
 
-     feature_set  n_features    auc     ap  brier  p_at_20  best_iter
-            FULL          23 0.6194 0.2896 0.1550   0.3382          3
-       PURE_CODE          11 0.5966 0.2893 0.1556   0.3362          4
-CODE_PLUS_REVIEW          15 0.5950 0.2993 0.1545   0.3342          6
+       feature_set  n_features    auc     ap  brier  p_at_20  best_iter
+              FULL          23 0.6194 0.2896 0.1550   0.3382          3
+         PURE_CODE          11 0.5966 0.2893 0.1556   0.3362          4
+  CODE_PLUS_REVIEW          15 0.5950 0.2993 0.1545   0.3342          6
+PURE_CODE_NO_AGENT          10 0.5938 0.2821 0.1573   0.3116          1
 
 
 --- FULL top 10 features (by gain) ---
@@ -47,3 +48,16 @@ log_files_changed  333.103605
 log_files_changed  287.141182
      n_test_files  137.591990
         n_commits   47.428969
+
+--- PURE_CODE_NO_AGENT top 10 features (by gain) ---
+          feature       gain
+log_files_changed 531.151179
+        loc_added 398.071392
+      loc_deleted 349.600383
+         language 319.524994
+  has_tests_in_pr  98.763395
+        n_commits  68.373100
+        task_type  65.749702
+     n_test_files  34.333500
+    files_changed   0.000000
+    log_loc_added   0.000000

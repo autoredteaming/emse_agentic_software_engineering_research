@@ -1,6 +1,6 @@
 # Beyond the Revert — 3-RQ Reproduction Package
 
-Reproducible experiment backing the EMSE paper *Beyond the Revert: An
+Reproducible experiment backing the paper *Beyond the Revert: An
 Empirical Study of Latent Post-Merge Damage in AI Coding Agent Pull
 Requests*.  This directory tree corresponds to the 3-RQ structure used
 in the paper after the April-2026 restructuring.
@@ -296,4 +296,4 @@ Top-15 feature overlap between T1 FULL and T2 FULL: `12/15`.
 
 ## Citation
 
-If you use this code or data, please cite the EMSE paper (forthcoming).
+If you use this code or data, please cite the paper (forthcoming).

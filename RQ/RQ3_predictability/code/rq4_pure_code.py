@@ -1,26 +1,27 @@
-"""RQ4 — Pure-code features variant (reviewer rebuttal).
+"""RQ4 — Feature-set ablation (reviewer rebuttal).
 
-Reviewer concern: the full model is dominated by `merge_duration_hours`,
-which may just encode "maintainer trust level" rather than code quality.
-We rebut this by training a second LightGBM using ONLY code-intrinsic
-features (no merge duration, no review counts, no repo popularity).
+Two construct-validity concerns:
+  (i) the FULL model is dominated by `merge_duration_hours`, which may
+      encode "maintainer trust level" rather than code quality; and
+  (ii) `agent` identity (the categorical "Codex / Devin / Cursor / ...")
+      is itself observable at merge time, but it just re-encodes the
+      RQ2 per-agent gap and is not a true *code-intrinsic* feature.
 
-Feature sets:
-  (A) FULL (current):      23 features including merge_duration, reviews,
+We separate the two concerns by training four feature-set variants:
+  (A) FULL                  23 features incl. merge_duration, reviews,
                             stars, forks, n_comments, commenter_diversity
-  (B) PURE CODE:           loc_added, loc_deleted, files_changed, n_commits,
-                            has_tests_in_pr, n_test_files, language,
-                            task_type, agent (agent is a behavioral sig.,
-                            not a review signal)
-  (C) CODE+REVIEW:         pure code + n_reviews, n_approvals,
-                            n_changes_requested, reviewer_diversity
-                            (excludes merge_duration_hours and popularity
-                             features)
+  (B) PURE_CODE             11 features: code-intrinsic + agent identity
+                            (no review/popularity/merge-duration signals)
+  (C) CODE_PLUS_REVIEW      15 features: PURE_CODE + review counts
+                            (still excludes merge_duration and popularity)
+  (D) PURE_CODE_NO_AGENT    10 features: PURE_CODE minus `agent`; the
+                            strictest "code-intrinsic only" set, used to
+                            verify that the predictor still works after
+                            removing the agent-identity proxy.
 
-If (B) AUC ≈ (A) AUC → code alone carries predictive signal, rebutting
-the "self-fulfilling prophecy" concern.
-If (B) AUC << (A) AUC → most signal was from review/trust features,
-confirming the reviewer's suspicion.
+Two-axis interpretation:
+  FULL → CODE_PLUS_REVIEW → PURE_CODE rebuts "trust-proxy leakage"
+  PURE_CODE → PURE_CODE_NO_AGENT rebuts "agent-identity proxy leakage"
 
 Outputs:
   ../results/rq4_pure_code_metrics.txt
@@ -98,6 +99,15 @@ FEATURE_SETS = {
         "log_loc_added", "log_files_changed",
         "n_reviews", "n_approvals", "n_changes_requested",
         "reviewer_diversity",
+    ],
+    # Strictest code-intrinsic set: PURE_CODE minus `agent` identity.
+    # If AUC / lift here are close to PURE_CODE, the predictor is not
+    # smuggling in agent-identity-as-shortcut.
+    "PURE_CODE_NO_AGENT": [
+        "task_type", "language",
+        "loc_added", "loc_deleted", "files_changed", "n_commits",
+        "has_tests_in_pr", "n_test_files",
+        "log_loc_added", "log_files_changed",
     ],
 }
 CAT_COLS = ["agent", "task_type", "language", "merge_month"]
