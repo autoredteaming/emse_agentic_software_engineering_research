@@ -16,16 +16,13 @@ paper (after the April-2026 restructuring).
 │                         and the Overleaf-managed `latex/` subtree
 └── RQ/                 ← three-RQ reproduction tree (see RQ/README.md)
     ├── shared/         ← cross-cut data prep + cached parquet artefacts
-    ├── RQ1_prevalence/ ← layered measurement framework (4 layers)
-    ├── RQ2_heterogeneity/
-    │                     bias decomposition (selection-bias share + residual)
-    ├── RQ2_exploratory/
-    │                     PR-level covariate associations
-    │                     (renamed from RQ3_mechanism, demoted to
-    │                      non-confirmatory in the April-2026 restructuring)
-    └── RQ3_predictability/
-                          merge-time LightGBM with 2x3 factorial robustness
-                          (renamed from RQ4_predictability)
+    ├── RQ1_prevalence/      layered measurement framework (4 layers)
+    ├── RQ2_heterogeneity/   bias decomposition (selection-bias share + residual)
+    │   └── exploratory/     PR-level covariate associations
+    │                        (renamed from RQ3_mechanism, demoted to
+    │                         non-confirmatory in the April-2026 restructuring)
+    └── RQ3_predictability/  merge-time LightGBM with 2x3 factorial robustness
+                             (renamed from RQ4_predictability)
 ```
 
 ## Three research questions
@@ -76,7 +73,7 @@ robust across all four outcome strata) does not survive the strict
 outcomes (under `struct_fix_majority`: OR = 0.999, p = 0.91) and
 because `0/184` agent × moderator interactions survive global
 BH-FDR correction (vs `11/184` per-model).  The corresponding code
-and outputs are preserved under `RQ/RQ2_exploratory/` and the paper
+and outputs are preserved under `RQ/RQ2_heterogeneity/exploratory/` and the paper
 now reports them as a non-confirmatory subsection inside RQ2.
 
 `RQ4_predictability/` was renamed to `RQ3_predictability/` to match

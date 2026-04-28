@@ -40,7 +40,7 @@ paper.  Reason: under the strictest outcome (`struct_fix_majority`)
 `n_reviews` has `OR = 0.999, p = 0.91`, and `0/184` interactions
 survive global BH-FDR (vs `11/184` per-model).  The corresponding
 scripts and `*.csv/.txt` outputs are preserved here in
-`RQ2_exploratory/` so the descriptive analysis remains reproducible,
+`RQ2_heterogeneity/exploratory/` so the descriptive analysis remains reproducible,
 but they should not be cited as confirmatory evidence.
 
 ## Directory layout
@@ -91,37 +91,38 @@ RQ/
 │   │   └── rq2_robust.py              3-outcome strictness re-runs
 │   ├── data/
 │   │   └── rq2_km_per_agent.csv
-│   └── results/
-│       ├── rq2_cox.txt                            naive
-│       ├── rq2_negbin.txt                         naive
-│       ├── rq2_cox_with_churn.txt                 churn-controlled (headline)
-│       ├── rq2_negbin_with_churn.txt              churn-controlled (headline)
-│       ├── rq2_agent_effect_comparison.csv        naive vs churn IRR side-by-side
-│       ├── rq2_robust_per_agent.csv               loose / strict / majority
-│       ├── rq2_robust_negbin.txt                  outcome = n_fix_fup
-│       ├── rq2_robust_logit.txt                   outcome = struct_fix_majority
-│       ├── rq2_robust_summary.txt                 Spearman ρ + p-values
-│       ├── rq2_robust_per_lang.csv                by-language strict rates
-│       ├── rq2_by_task.csv
-│       ├── rq2_by_language.csv
-│       └── rq2_by_stars.csv
-├── RQ2_exploratory/                    (renamed from RQ3_mechanism)
-│   │  Demoted to RQ2 Exploratory — see paper §4.2 sub-subsection
-│   │  "Exploratory: PR-Level Covariate Associations (Non-Confirmatory)".
-│   │  Retained here so the descriptive coefficients and the 11/184
-│   │  per-model BH-survivors can be inspected for reproducibility.
-│   ├── code/
-│   │   ├── rq3_mechanism.py           main effects + 10 interaction models + BH
-│   │   └── rq3_robust.py              3-outcome sensitivity for the same model
-│   ├── data/
-│   │   └── rq3_joined.parquet
-│   └── results/
-│       ├── rq3_main_effects.txt
-│       ├── rq3_interactions.txt
-│       ├── rq3_marginal_effects.csv   bh_global vs bh_within_model columns
-│       ├── rq3_robust_compare.csv     loose / mid / strict OR side-by-side
-│       ├── rq3_robust_main.txt
-│       └── rq3_robust_summary.txt     Note: ends with "RQ3 main effects unstable"
+│   ├── results/
+│   │   ├── rq2_cox.txt                            naive
+│   │   ├── rq2_negbin.txt                         naive
+│   │   ├── rq2_cox_with_churn.txt                 churn-controlled (headline)
+│   │   ├── rq2_negbin_with_churn.txt              churn-controlled (headline)
+│   │   ├── rq2_agent_effect_comparison.csv        naive vs churn IRR side-by-side
+│   │   ├── rq2_robust_per_agent.csv               loose / strict / majority
+│   │   ├── rq2_robust_negbin.txt                  outcome = n_fix_fup
+│   │   ├── rq2_robust_logit.txt                   outcome = struct_fix_majority
+│   │   ├── rq2_robust_summary.txt                 Spearman ρ + p-values
+│   │   ├── rq2_robust_per_lang.csv                by-language strict rates
+│   │   ├── rq2_by_task.csv
+│   │   ├── rq2_by_language.csv
+│   │   └── rq2_by_stars.csv
+│   └── exploratory/                   (renamed from RQ3_mechanism;
+│       │                              now the RQ2 Exploratory subsection)
+│       │  Demoted to RQ2 Exploratory — see paper §4.2 sub-subsection
+│       │  "Exploratory: PR-Level Covariate Associations (Non-Confirmatory)".
+│       │  Retained here so the descriptive coefficients and the 11/184
+│       │  per-model BH-survivors can be inspected for reproducibility.
+│       ├── code/
+│       │   ├── rq3_mechanism.py       main effects + 10 interaction models + BH
+│       │   └── rq3_robust.py          3-outcome sensitivity for the same model
+│       ├── data/
+│       │   └── rq3_joined.parquet
+│       └── results/
+│           ├── rq3_main_effects.txt
+│           ├── rq3_interactions.txt
+│           ├── rq3_marginal_effects.csv  bh_global vs bh_within_model columns
+│           ├── rq3_robust_compare.csv    loose / mid / strict OR side-by-side
+│           ├── rq3_robust_main.txt
+│           └── rq3_robust_summary.txt    Note: ends with "RQ3 main effects unstable"
 └── RQ3_predictability/                 (renamed from RQ4_predictability)
     ├── code/
     │   ├── rq4_predictability.py      main: LightGBM FULL (23 features)
@@ -147,7 +148,7 @@ RQ/
 The legacy `rq3_*` and `rq4_*` filename prefixes are intentionally
 preserved so the file paths printed by the original scripts remain
 valid; only the **directory** names changed.  The paper now uses
-`RQ2_exploratory/` (formerly `RQ3_mechanism/`) and
+`RQ2_heterogeneity/exploratory/` (formerly `RQ3_mechanism/`) and
 `RQ3_predictability/` (formerly `RQ4_predictability/`).
 
 ## Run order
@@ -172,8 +173,8 @@ python3 RQ2_heterogeneity/code/rq2_hetero_with_churn.py # ~3min  (churn-controll
 python3 RQ2_heterogeneity/code/rq2_robust.py            # ~2min  (loose/strict/majority)
 
 # --- RQ2 Exploratory (PR-level covariate associations, non-confirmatory) ---
-python3 RQ2_exploratory/code/rq3_mechanism.py       # ~1min (11 interaction models)
-python3 RQ2_exploratory/code/rq3_robust.py          # ~1min (3-outcome sensitivity)
+python3 RQ2_heterogeneity/exploratory/code/rq3_mechanism.py       # ~1min (11 interaction models)
+python3 RQ2_heterogeneity/exploratory/code/rq3_robust.py          # ~1min (3-outcome sensitivity)
 
 # --- RQ3: merge-time predictability (2x3 factorial) ---
 python3 RQ3_predictability/code/rq4_predictability.py  # ~20s   T1 FULL
