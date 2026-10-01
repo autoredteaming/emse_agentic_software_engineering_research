@@ -1,82 +1,38 @@
-# Beyond the Revert: Latent Post-Merge Damage in AI Coding Agent PRs
+# Post-Merge Damage Indicators in AI Coding Agent Pull Requests: An Empirical Study
 
-Reproduction package for the paper *Beyond the Revert: An Empirical
-Study of Latent Post-Merge Damage in AI Coding Agent Pull Requests*.
+Reproduction package for the manuscript by Lili Wang, Meng Hu, and Yubin Qu, prepared for submission to the *Journal of Systems and Software*.
 
-This repository contains the data-processing scripts, intermediate
-artefacts, and analysis code for all three research questions of the
-paper (after the April-2026 restructuring).
+The study examines 24,014 merged pull requests (PRs) from five AI coding agents across 1,765 repositories in the AIDev dataset. This repository contains the analysis scripts, intermediate data, saved results, and evidence for the LLM-assisted audit.
+
+## Research questions and results
+
+1. **RQ1: How do post-merge indicators differ?** The bug-related textual indicator flags 0.62% of PRs, the indicator based on at least 30% file overlap flags 63.79%, and requiring a fix or revert follow-up reduces the flagged share to 32.94%. Agreement between the textual and file-overlap indicators is near chance (Cohen's kappa approximately -0.002). In an LLM-assisted audit of 60 source–follow-up pairs, 14 of 56 assessable pairs are labeled as damage: estimated precision 25%, with a Wilson 95% confidence interval of 15.5%–37.7%. These indicators measure different recorded activities. Multiplying 32.94% by 25% gives an illustrative extrapolation of approximately 8.2%, conditional on audit representativeness, rather than a validated prevalence bound.
+2. **RQ2: How do agent comparisons change after adjustment for file activity?** Adding both `log_file_hotness` and `log_file_hotness_before` reduces the Codex and Devin negative binomial incidence rate ratios relative to Claude Code by approximately 88%, to 1.85 and 2.00. Their adjusted Cox hazard ratios are 1.47 and 1.55. The models describe associations with follow-up activity and subsequent file modification; attenuation of the ratios does not identify a causal share of selection bias. Additional outcome definitions and PR-level associations are examined in sensitivity and exploratory analyses.
+3. **RQ3: How well do PR features predict the selected indicators?** The temporal-split analysis compares two targets and four feature sets. The 11-feature `PURE_CODE` configuration achieves 33.62% precision among the highest-scoring 20% of PRs for the composite target, against a 17.25% evaluation-set positive rate (1.95-fold lift). This configuration includes agent, language, and task metadata as well as change features. A two-feature logistic baseline has higher AUC on this target; LightGBM has higher precision at the review cutoff. The strict-target full model has AUC 0.6394 and 2.01-fold lift. Eight of the top ten features overlap between the two full-model gain rankings.
+
+The later temporal partition is used for both early stopping and final metric reporting. The composite target is defined using full-sample standardization and a full-sample threshold. Review counts include recorded activity from all timestamps, and repository popularity is taken from the dataset snapshot. These details define the scope of the retrospective prediction results.
 
 ## Repository structure
 
-```
-.
-├── README.md           ← you are here
-├── .gitignore          ← excludes raw AIDev dump (925 MB), MSR2026 PDFs,
-│                         and the Overleaf-managed `latex/` subtree
-└── RQ/                 ← three-RQ reproduction tree (see RQ/README.md)
-    ├── shared/         ← cross-cut data prep + cached parquet artefacts
-    ├── RQ1_prevalence/      layered measurement framework (4 layers)
-    ├── RQ2_heterogeneity/   bias decomposition (selection-bias share + residual)
-    │   └── exploratory/     PR-level covariate associations
-    │                        (renamed from RQ3_mechanism, demoted to
-    │                         non-confirmatory in the April-2026 restructuring)
-    └── RQ3_predictability/  merge-time LightGBM with 2x3 factorial robustness
-                             (renamed from RQ4_predictability)
+```text
+RQ/
+├── shared/                       Data loading, indicator construction, and cached data
+├── RQ1_prevalence/               Indicator rates and LLM-assisted audit
+├── RQ2_heterogeneity/            Agent comparisons and file-activity adjustment
+│   └── exploratory/             PR-level associations and interaction analyses
+└── RQ3_predictability/           Two targets, four feature sets, and baselines
 ```
 
-## Three research questions
+See [RQ/README.md](RQ/README.md) for the run order, result-file mapping, and numerical tables.
 
-1. **RQ1 — Layered measurement framework**.  No single SZZ-style proxy
-   reliably measures latent post-merge damage on agent PRs.  Four
-   independent layers (text → coarse structural → fix-task corrected
-   structural → line-level qualitative audit) bracket the true
-   prevalence to `[0.62%, 63.79%]` with a corrected mid-bound of
-   `32.94%` and a strict lower bound of `~8.2%`.  Cohen's
-   `κ ≈ −0.002` between text and structural signals.
-2. **RQ2 — Decomposing the per-agent damage gap into selection bias
-   and residual risk**.  Approximately `88%` of the naive `~16×`
-   per-agent NB IRR between Codex / Devin and Claude Code is absorbed
-   by a single `log_file_hotness` covariate; the residual is
-   `1.85–2.0×` (NB IRR) and `1.47–1.55×` (Cox HR), with `100%`
-   direction consistency over `12/12` agent coefficients across three
-   outcome strata.
-3. **RQ3 — Merge-time predictability without maintainer-trust
-   proxies**.  A LightGBM model on `11` code-intrinsic features
-   reaches `Precision@top-20% = 33.6%` against a `17.25%` test base
-   rate (`~1.96×` lift); a `2 × 3` factorial robustness design
-   (training-target × feature-set ablation) jointly rules out
-   maintainer-trust proxy leakage and noisy-proxy overfitting,
-   yielding strict-outcome AUC `0.639`, lift `2.01×`, and top-15
-   feature overlap `12/15`.
+## Data and execution
 
-## Reproducing the experiments
+The raw AIDev parquet corpus is not included. Obtain the data described in the [AIDev paper](https://arxiv.org/abs/2507.15003), then set `DATA_DIR` in [RQ/shared/code/load_data.py](RQ/shared/code/load_data.py) to the absolute path of the extracted parquet directory. The checked-in loader uses the original machine's absolute path, so placing the data at the repository root alone does not configure it.
 
-See [`RQ/README.md`](RQ/README.md) for the full directory layout, run
-order, sample-scope description, and headline result tables.
+The scripts use Python 3 with `pandas`, `pyarrow`, `numpy`, `scipy`, `scikit-learn`, `statsmodels`, `lifelines`, and `lightgbm`. The repository does not include a lockfile for the original environment. The commands in [RQ/README.md](RQ/README.md) describe the analysis sequence; they were checked against the source files, without rerunning the experiments during this documentation revision.
 
-## Data dependencies
+The audit directory contains the sampled pairs, evidence packets, codebook, and saved labels. Two sessions of the same LLM used different prompts, with the second session blind to the first session's labels. These are LLM-assisted labels, not an independently human-coded reference set. The sampling and evidence-extraction scripts do not regenerate the saved LLM labels.
 
-The raw AIDev parquet corpus (~925 MB) is **not** committed to this
-repository.  Fetch it from the upstream Hugging Face dataset and
-unpack it as `AIDev_datasets/` at the repository root before running
-`shared/code/build_sample.py`; everything downstream is computed and
-cached under `RQ/shared/cache/`.
+## File naming
 
-## Notes on the April-2026 restructuring
-
-The original 4-RQ paper organised the empirical funnel as
-*prevalence → heterogeneity → mechanism → predictability*.  After a
-detailed editorial-style review, the **mechanism RQ** was retired
-because its central claim (`n_reviews` as the only protective factor
-robust across all four outcome strata) does not survive the strict
-outcomes (under `struct_fix_majority`: OR = 0.999, p = 0.91) and
-because `0/184` agent × moderator interactions survive global
-BH-FDR correction (vs `11/184` per-model).  The corresponding code
-and outputs are preserved under `RQ/RQ2_heterogeneity/exploratory/` and the paper
-now reports them as a non-confirmatory subsection inside RQ2.
-
-`RQ4_predictability/` was renamed to `RQ3_predictability/` to match
-the new paper structure.  File names inside both renamed directories
-keep the legacy `rq3_*` and `rq4_*` prefixes so existing scripts and
-data references continue to work.
+Legacy `rq3_*` filenames under `RQ2_heterogeneity/exploratory/` and `rq4_*` filenames under `RQ3_predictability/` are retained to preserve script and data references. The `ground_truth` filename refers to filtering follow-ups by task labels. Some saved text outputs retain wording from earlier manuscript drafts; this README describes the current interpretation of those results.
